@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Divider from './Divider';
 
 const JoinNow = () => {
@@ -11,7 +12,7 @@ const JoinNow = () => {
             <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
           </div>
           <div className="four wide column">
-            <a className="ui huge button" href="#sample">Check Them Out</a>
+            <Link className="ui huge button" to="/register">REGISTER</Link>
           </div>
           <div className="six wide column">
             <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>

@@ -6,7 +6,7 @@ const Divider = props => {
       <h3 className="ui horizontal divider header">
         {props.title}
       </h3>
-      <p>{props.text}</p>
+      <p className="text-divider">{props.text}</p>
     </div>
   );
 }

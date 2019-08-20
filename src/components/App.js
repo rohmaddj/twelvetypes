@@ -1,32 +1,36 @@
-import './style/HomePage.css';
+import '../assets/style/HomePage.css';
 import React from 'react';
-import faker from 'faker';
-import ImageSlider from './ImageSlider';
-import HeadLine from './HeadLine';
-import About from './About';
-import Login from './Login';
-import JoinNow from './JoinNow';
-import Contact from './Contact';
-import Footer from './Footer';
-import Header from './Header';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Footer from './child/Footer';
+import Header from './child/Header';
+import Register from  './child/Register';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import LoginPage from './pages/LoginPage';
+import QuizPage from './pages/QuizPage';
+import ContactPage from './pages/ContactPage';
+import ArchetypePage from './pages/ArchetypePage';
 
+
+import DashboardPage from './pages/DashboardPage';
 class App extends React.Component {
 
   render() {
     return (
     <div className="pusher">
-      <div className="ui inverted vertical masthead center aligned segment linear-background">
+      <BrowserRouter>
         <Header />
-        <ImageSlider />
-      </div>
-      <HeadLine />
-      <div className="ui container">
-        <About image={faker.image.avatar()} alt={faker.lorem.word()} />
-        <Login />
-        <JoinNow />
-        <Contact />
-      </div>
-      <Footer />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/archetype" component={ArchetypePage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/quiz" component={QuizPage} />
+        <Route path="/register" component={Register} />
+
+        <Route path="/dashboard" component={DashboardPage} />
+        <Footer />
+      </BrowserRouter>
     </div>
     );
   }
