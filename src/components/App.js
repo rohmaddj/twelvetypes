@@ -13,6 +13,7 @@ import ArchetypePage from './pages/ArchetypePage';
 
 
 import DashboardPage from './pages/DashboardPage';
+import SidebarMenu from './child/SidebarMenu';
 class App extends React.Component {
 
   render() {
@@ -27,6 +28,7 @@ class App extends React.Component {
         <Route path="/login" component={LoginPage} />
         <Route path="/quiz" component={QuizPage} />
         <Route path="/register" component={Register} />
+        <Route path="/menu" component={SidebarMenu} />
 
         <Route path="/dashboard" component={DashboardPage} />
         <Footer />
