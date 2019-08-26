@@ -1,15 +1,27 @@
 import React from 'react';
-import HeadLine from '../child/HeadLine';
-import Divider from '../child/Divider';
+import HeadLine from './HeadLine';
+import Divider from './Divider';
 import caregiverMale from '../../assets/images/archetypes/Caregiver.jpg';
 import caregiverFemale from '../../assets/images/archetypes/CaregiverC.jpg';
 
-class SingleArchetypePage extends React.Component {
+class ArchetypeDetail extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
-      <div className="ui vertical stripe quote segment">
+      <div>
         <Divider title="ARCHETYPE" />
           <div className="ui middle aligned stackable grid container">
+
+          <div className="ui buttons">
+            <button className="ui labeled icon button" onClick={ this.props.onButtonBackClick }>
+            <i className="left chevron icon"></i>
+            Back
+            </button>
+          </div>
+
             <div className="row">
               <div className="six wide column">
                 <img src={caregiverMale} className="ui large bordered rounded image" alt="archetype" />
@@ -56,4 +68,4 @@ class SingleArchetypePage extends React.Component {
   }
 }
 
-export default SingleArchetypePage;
+export default ArchetypeDetail;

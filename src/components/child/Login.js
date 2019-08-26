@@ -1,5 +1,6 @@
 import React from 'react';
 import Divider from './Divider';
+import { Link } from 'react-router-dom';
 import twelveType from '../../api/twelveType';
 import LoginForm from './LoginForm';
 import UserCard from './UserCard';
@@ -51,7 +52,7 @@ class Login extends React.Component {
             <div className="seven wide column">
               <h3 className="ui header">Take a free quiz first?</h3>
               <p>That is what they all say about us I shouldn't have gone with their competitor I shouldn't have gone with their competitor..</p>
-              <a className="ui huge button" href="#sample">TAKE THE QUIZ <i className="caret square right icon"></i></a>
+              <Link className="ui huge button" to="/quiz">TAKE THE QUIZ <i className="caret square right icon"></i></Link>
             </div>
             { this.props.isSignedIn ?
               <UserCard

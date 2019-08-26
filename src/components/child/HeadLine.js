@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeadLine = () => {
   return (
@@ -10,7 +11,7 @@ const HeadLine = () => {
           <p>Take our Personality Test and get "freakishly accurate" description of who you are and why you do the things the way you do.</p>
         </div>
         <div className="five wide column">
-          <a className="ui huge button" href="#sample">TAKE THE QUIZ <i className="caret square right icon"></i></a>
+          <Link className="ui huge button" to="/quiz">TAKE THE QUIZ <i className="caret square right icon"></i></Link>
         </div>
       </div>
     </div>

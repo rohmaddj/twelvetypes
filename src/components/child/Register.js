@@ -6,6 +6,11 @@ import twelveType from '../../api/twelveType';
 
 class Register extends React.Component {
   state = { email: '', name: '', password: '', inFetch: false }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   onInputChange = (event, type) => {
     if(type === 'email') {
       this.setState({

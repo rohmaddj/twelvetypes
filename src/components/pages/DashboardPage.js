@@ -8,6 +8,8 @@ import faker from 'faker';
 
 class DashboardPage extends React.Component {
   componentDidMount = async () => {
+    window.scrollTo(0, 0)
+
     if(this.props.isSignedIn === false) {
       this.props.history.push('/login')
     } else if (this.props.archetype === "" && this.props.answers.length > 0) {

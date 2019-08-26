@@ -1,12 +1,17 @@
 import React from 'react';
 import About from '../child/About';
 
-const AboutPage = () => {
-  return (
-    <div className="ui container">
-      <About detail='yes'/>
-    </div>
-  );
+class AboutPage extends React.Component {
+  componentDidMount = () => {
+    window.scrollTo(0, 0)
+  }
+  render() {
+    return (
+      <div className="ui container">
+        <About detail='yes'/>
+      </div>
+    );
+  }
 }
 
 export default AboutPage;

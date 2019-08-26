@@ -2,13 +2,19 @@ import React from 'react';
 import Login from '../child/Login';
 import JoinNow from '../child/JoinNow';
 
-const LoginPage = (props) => {
-  return (
-    <div className="ui container">
-      <Login {...props}/>
-      <JoinNow />
-    </div>
-  );
+class LoginPage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
+  render() {
+    return (
+      <div className="ui container">
+        <Login {...this.props}/>
+        <JoinNow />
+      </div>
+    );
+  }
 }
 
 export default LoginPage;

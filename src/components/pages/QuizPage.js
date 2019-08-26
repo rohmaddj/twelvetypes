@@ -8,6 +8,7 @@ class QuizPage extends React.Component {
   state = { answers: [] }
 
   componentDidMount = async () => {
+    window.scrollTo(0, 0)
     const response = await twelveType.get('/questions', {
       params: { category: 1 }
     });
@@ -27,6 +28,7 @@ class QuizPage extends React.Component {
   }
 
   onNextButton = async (term) => {
+    window.scrollTo(0, 0)
     const response = await twelveType.get('/questions', {
       params: { category: this.props.category + 1 }
     });
