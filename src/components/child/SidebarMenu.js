@@ -9,6 +9,7 @@ export default props => {
     // Pass on our props
     <div className="sidebar-menu">
       <Menu {...props} isOpen={open} onStateChange={({isOpen}) => setOpen(isOpen)}>
+
         <Link className="menu-item" to="/" onClick={() => setOpen(false)}>
           Home
         </Link>

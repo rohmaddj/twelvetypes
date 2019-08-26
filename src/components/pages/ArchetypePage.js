@@ -1,59 +1,99 @@
 import React from 'react';
-import HeadLine from '../child/HeadLine';
 import Divider from '../child/Divider';
+import ArchetypeCard from '../child/ArchetypeCard';
+
 import caregiverMale from '../../assets/images/archetypes/Caregiver.jpg';
 import caregiverFemale from '../../assets/images/archetypes/CaregiverC.jpg';
+import creatorMale from '../../assets/images/archetypes/Creator.jpg';
+import creatorFemale from '../../assets/images/archetypes/CreatorC.jpg';
+import explorerMale from '../../assets/images/archetypes/Explorer.jpg';
+import explorerFemale from '../../assets/images/archetypes/ExplorerC.jpg';
+import heroMale from '../../assets/images/archetypes/Hero.jpg';
+import heroFemale from '../../assets/images/archetypes/HeroC.jpg';
+import innocentMale from '../../assets/images/archetypes/Innocent.jpg';
+import innocentFemale from '../../assets/images/archetypes/InnocentC.jpg';
+import jesterMale from '../../assets/images/archetypes/Jester.jpg';
+import jesterFemale from '../../assets/images/archetypes/JesterC.jpg';
 
 class ArchetypePage extends React.Component {
   render() {
     return (
       <div className="ui vertical stripe quote segment">
-        <Divider title="ARCHETYPE" />
+        <Divider title="ARCHETYPE" text="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"/>
           <div className="ui middle aligned stackable grid container">
             <div className="row">
-              <div className="six wide column">
-                <img src={caregiverMale} className="ui large bordered rounded image" alt="archetype" />
+              <div className="eight wide column caregiver-card">
+                <ArchetypeCard
+                  archetype="THE CAREGIVER"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={caregiverMale}
+                  femaleImage={caregiverFemale}
+                />
               </div>
-              <div className="eight wide right floated column">
-                <h3 className="ui header">Introduction</h3>
-                <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+              <div className="eight wide column creator-card">
+                <ArchetypeCard
+                  archetype="THE CREATOR"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={creatorMale}
+                  femaleImage={creatorFemale}
+                />
               </div>
-            </div>
-          </div>
 
-          <div className="ui middle aligned stackable grid container">
-            <div className="row">
-              <div className="sixteen wide column">
-                <h3 className="ui header">Content 1</h3>
-                <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+              <div className="eight wide column explorer-card">
+                <ArchetypeCard
+                  archetype="THE EXPLORER"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={explorerMale}
+                  femaleImage={explorerFemale}
+                />
               </div>
-            </div>
-          </div>
+              <div className="eight wide column hero-card">
+                <ArchetypeCard
+                  archetype="THE HERO"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={heroMale}
+                  femaleImage={heroFemale}
+                />
+              </div>
 
-          <div className="ui middle aligned stackable grid container">
-            <div className="row">
-              <div className="eight wide column">
-                <h3 className="ui header">Content 2</h3>
-                <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. </p>
+              <div className="eight wide column innocent-card">
+                <ArchetypeCard
+                  archetype="THE INNOCENT"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={innocentMale}
+                  femaleImage={innocentFemale}
+                />
               </div>
-              <div className="six wide right floated column">
-                <img src={caregiverFemale} className="ui large bordered rounded image" alt="archetype" />
+              <div className="eight wide column jester-card">
+                <ArchetypeCard
+                  archetype="THE JESTER"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={jesterMale}
+                  femaleImage={jesterFemale}
+                />
               </div>
-            </div>
-          </div>
 
-          <div className="ui middle aligned stackable grid container">
-            <div className="row">
-              <div className="sixteen wide column">
-                <h3 className="ui header">Conclusion</h3>
-                <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered. Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+              <div className="eight wide column lover-card">
+                <ArchetypeCard
+                  archetype="THE INNOCENT"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={innocentMale}
+                  femaleImage={innocentFemale}
+                />
+              </div>
+              <div className="eight wide column magician-card">
+                <ArchetypeCard
+                  archetype="THE JESTER"
+                  description="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"
+                  maleImage={jesterMale}
+                  femaleImage={jesterFemale}
+                />
               </div>
             </div>
           </div>
-        <HeadLine />
       </div>
     )
   }
 }
 
-export default ArchetypePage;
+export default ArchetypePage

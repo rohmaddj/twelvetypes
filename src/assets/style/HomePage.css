@@ -103,6 +103,54 @@
   margin-top: 120px;
   border-radius: 60px;
 }
+.caregiver-card {
+  background: #923434;
+  color: #ffffff;
+}
+.creator-card {
+  background: #567224;
+  color: #ffffff;
+}
+.explorer-card {
+  background: #2c3135;
+  color: #ffffff;
+}
+.hero-card {
+  background: #1c3f4a;
+  color: #ffffff;
+}
+.innocent-card {
+  background: #a88710;
+  color: #ffffff;
+}
+.jester-card {
+  background: #2b76aa;
+  color: #ffffff;
+}
+.lover-card {
+  background: #d43e3f;
+  color: #ffffff;
+}
+.magician-card {
+  background: #283155;
+  color: #ffffff;
+}
+.member-card {
+  background: #796e7e;
+  color: #ffffff;
+}
+.outlaw-card {
+  background: #5e5131;
+  color: #ffffff;
+}
+.ruler-card {
+  background: #aa8f00;
+  color: #ffffff;
+}
+.sage-card {
+  background: #857a56;
+  color: #ffffff;
+}
 .content.inside.background img {
   max-width: 300px;
   padding: 2em;

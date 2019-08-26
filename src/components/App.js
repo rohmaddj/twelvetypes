@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage';
 import QuizPage from './pages/QuizPage';
 import ContactPage from './pages/ContactPage';
 import ArchetypePage from './pages/ArchetypePage';
+import SingleArchetypePage from './pages/SingleArchetypePage';
 
 
 import DashboardPage from './pages/DashboardPage';
@@ -29,6 +30,7 @@ class App extends React.Component {
         <Route path="/quiz" component={QuizPage} />
         <Route path="/register" component={Register} />
         <Route path="/menu" component={SidebarMenu} />
+        <Route path="/archetype/details" component={SingleArchetypePage} />
 
         <Route path="/dashboard" component={DashboardPage} />
         <Footer />
