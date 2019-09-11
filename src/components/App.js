@@ -13,12 +13,14 @@ import ArchetypePage from './pages/ArchetypePage';
 
 import DashboardPage from './pages/DashboardPage';
 import SidebarMenu from './child/SidebarMenu';
+import DemoPage from './pages/DemoPage';
+import DemoResultPage from './pages/DemoResultPage';
 class App extends React.Component {
 
   render() {
     return (
     <div className="pusher">
-      <BrowserRouter>
+      <BrowserRouter basename="/twelvetypes">
         <Header />
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
@@ -28,6 +30,8 @@ class App extends React.Component {
         <Route path="/quiz" component={QuizPage} />
         <Route path="/register" component={Register} />
         <Route path="/menu" component={SidebarMenu} />
+        <Route path="/demo" component={DemoPage} />
+        <Route path="/demo-result" component={DemoResultPage} />
 
         <Route path="/dashboard" component={DashboardPage} />
         <Footer />
