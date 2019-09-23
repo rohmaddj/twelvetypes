@@ -1,8 +1,9 @@
-export const signIn = (username, archetype, token) => {
+export const signIn = (username, archetype, register, token) => {
   return {
     type: 'SIGN_IN',
     username: username,
     archetype: archetype,
+    register: register,
     token: token
   }
 }
@@ -13,11 +14,12 @@ export const signOut = () => {
   }
 }
 
-export const updateUser = (username, archetype, token) => {
+export const updateUser = (username, archetype, register, token) => {
   return {
     type: 'UPDATE_USER',
     username: username,
     archetype: archetype,
+    register: register,
     token: token
   }
 }
@@ -35,6 +37,13 @@ export const addAnswers = (answers) => {
   return {
     type: 'ADD_ANSWERS',
     answers: answers
+  }
+}
+
+export const resetAnswers = () => {
+  return {
+    type: 'RESET_ANSWERS',
+    answers: []
   }
 }
 

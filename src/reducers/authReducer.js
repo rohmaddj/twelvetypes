@@ -2,7 +2,8 @@ const INITIAL_STATE = {
   isSignedIn: false,
   username: "",
   archetype: "",
-  token: ""
+  token: "",
+  register: ""
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -13,6 +14,7 @@ export default (state = INITIAL_STATE, action) => {
         isSignedIn: true,
         username: action.username,
         archetype: action.archetype,
+        register: action.register,
         token: action.token
       }
     case 'SIGN_OUT':
@@ -22,6 +24,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         username: action.username,
         archetype: action.archetype,
+        register: action.register,
         token: action.token
       }
     default:

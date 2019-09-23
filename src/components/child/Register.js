@@ -3,6 +3,7 @@ import Divider from './Divider';
 import { connect } from 'react-redux';
 import { signIn } from '../../actions';
 import twelveType from '../../api/twelveType';
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
   state = { email: '', name: '', password: '', inFetch: false }
@@ -36,7 +37,13 @@ class Register extends React.Component {
         password: this.state.password
       })
 
-      this.props.signIn(response.data.user.name, response.data.user.archetype, response.data.token);
+      var archetype = '';
+      if(response.data.user.archetype !== '') {
+        archetype = JSON.parse(response.data.user.archetype)
+      }
+      console.log(response)
+      localStorage.setItem('authToken', response.data.token)
+      this.props.signIn(response.data.user.name, archetype, response.data.user.created_at, response.data.token);
       this.props.history.push('/dashboard');
     } catch (error) {
       console.log(error)
@@ -47,7 +54,7 @@ class Register extends React.Component {
     return (
       <div className="ui container">
         <div className="ui vertical stripe quote segment">
-          <Divider title="REGISTER" />
+          <Divider title="CONTINUE TO YOUR RESULTS" text="Almost done, save your profile and proceed to your results!" />
           <div className="ui center aligned stackable grid container">
             <div className="center aligned row">
               <div className="eight wide column background-orange form">
@@ -91,7 +98,7 @@ class Register extends React.Component {
                   { this.state.inFetch ?
                     <div className="ui huge loading button login"></div>
                     :
-                    <div className="ui huge submit button login" onClick={() => this.onSubmit()}>Register</div>
+                    <div className="ui huge submit button login" onClick={() => this.onSubmit()}>Save and Continue To My Result</div>
                   }
                 </div>
               </div>
@@ -110,6 +117,7 @@ class Register extends React.Component {
                 </div>
               </div>
             </div>
+            <Link className="ui huge button" to="/login">Already have an account?</Link>
           </div>
         </div>
       </div>

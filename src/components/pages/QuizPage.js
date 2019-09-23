@@ -1,63 +1,80 @@
 import React from 'react';
 import twelveType from '../../api/twelveType';
-import QuizList from '../child/QuizList';
+import ListQuiz from '../child/ListQuiz';
+import { Progress, Modal, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { addQuestions, addAnswers, updateUser } from '../../actions';
+import { addQuiz, addAnswers, addTemp, resetTemp, changeTemp } from '../../actions';
 
 class QuizPage extends React.Component {
-  state = { answers: [] }
+  state = { percent: 0, open: false }
+
+  show = (size) => this.setState({ size, open: true }) // open modal configuration
+  close = () => this.setState({ open: false }) // close modal configuration
 
   componentDidMount = async () => {
-    window.scrollTo(0, 0)
-    const response = await twelveType.get('/questions', {
-      params: { category: 1 }
-    });
 
-    this.props.addQuestions(response.data.questions, response.data.options, 1)
-    //this.props.updateUser(null, null, this.props.token)
-    //this.setState({ questions: response.data.questions, options: response.data.options });
+    window.scrollTo(0, 0)
+    const response = await twelveType.get('/quizQuestion', {
+      params: { id: 1 }
+    });
+    this.props.addQuiz(response.data.question)
   }
 
-  onInputChange = (value, label) => {
-    this.setState({
-      answers: {
-        ...this.state.answers,
-        [label]: parseInt(value)
+  onInputChange = (answer, question) => {
+      const changeAnswer = this.props.temp.indexOf(answer)
+      if(changeAnswer !== -1) {
+        this.props.changeTemp(answer) // mutable redux
+      }else{
+        if(this.props.temp.length >= 3){
+          this.show('mini') // showing modal
+        }else{
+          this.props.addTemp(answer)
+        }
       }
-    });
-  }
+    }
 
-  onNextButton = async (term) => {
+  onNextButton = async (id) => {
     window.scrollTo(0, 0)
-    const response = await twelveType.get('/questions', {
-      params: { category: this.props.category + 1 }
+    const response = await twelveType.get('/quizQuestion', {
+      params: { id: id }
     });
-    this.props.addQuestions(response.data.questions, response.data.options, this.props.category + 1)
-    // this.setState({
-    //   questions: response.data.questions,
-    //   options: response.data.options,
-    //   questionCategory: (response.data.questions[0].category + 1)
-    // });
-  }
+    this.props.addQuiz(response.data.question)
+    this.props.addAnswers(this.props.temp)
+    this.props.resetTemp()
 
-  onSubmit = () => {
-    this.props.addAnswers(Object.values(this.state.answers))
-    this.props.history.push('/dashboard')
+    this.setState((prevState) => ({
+      percent: prevState.percent >= 100 ? 0 : prevState.percent + 10,
+    }))
+
+    if(id > 4){
+      this.props.history.push('/register')
+    }
   }
 
   render() {
+    const { open, size } = this.state
     return (
       <div className="ui center aligned vertical stripe quote segment">
-        <QuizList onChangeAnswer={this.onInputChange} answers={this.state.answers}/>
-        <div className="row">
-          <div className="five wide column">
-            {this.props.category < 3 ?
-            <button className="ui huge button" onClick={() => this.onNextButton()}>NEXT <i className="caret square right icon"></i></button>
-            : <button className="ui huge button" onClick={() => this.onSubmit() }>Result <i className="caret square right icon"></i></button> }
-          </div>
-        </div>
-      </div>
-    );
+        <Progress percent={this.state.percent} indicating progress/>
+        <ListQuiz onChangeAnswer={this.onInputChange.bind(this)} onNextButton={this.onNextButton}/>
+
+        <Modal size={size} open={open} onClose={this.close}>
+          <Modal.Header>Notification</Modal.Header>
+          <Modal.Content>
+            <p>Sorry, you already choose top three answers</p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button positive onClick={this.close.bind()}>Okay</Button>
+            {/* <Button
+              positive
+              icon='checkmark'
+              labelPosition='right'
+              content='Yes'
+            /> */}
+          </Modal.Actions>
+        </Modal>
+    </div>
+    )
   }
 }
 
@@ -67,11 +84,11 @@ const mapStateToProps = (state) => {
     username: state.auth.username,
     archetype: state.auth.archetype,
     token: state.auth.token,
-    category: state.quiz.category
+    temp: state.quiz.temp
   }
 }
 
 export default connect(
   mapStateToProps,
-  { addQuestions, addAnswers, updateUser }
+  { addQuiz, addAnswers, addTemp, resetTemp, changeTemp }
 )(QuizPage);

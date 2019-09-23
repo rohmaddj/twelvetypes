@@ -8,7 +8,7 @@
   background-size: contain;
   background-position: center;
   opacity: 0.1;
-  min-height: 408px;
+  min-height: 308px;
   content: "";
   opacity: 0.5;
   top: 0;
@@ -152,9 +152,9 @@
   color: #ffffff;
 }
 .content.inside.background img {
-  max-width: 300px;
+  max-width: 250px;
   padding: 2em;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 .quote.stripe.segment .grid .column.background-orange.form {
   padding: 5em;
@@ -446,7 +446,7 @@
   align-items:center;
   -webkit-box-pack:center;
   -ms-flex-pack:center;
-  justify-content:center;
+  /* justify-content:center; */
   margin:30px 0 15px
 }
 @media (min-width:768px){
@@ -527,7 +527,7 @@
   margin:0 15px;
   display:-webkit-box;
   display:-ms-flexbox;
-  display:flex;
+  /* display:flex; */
   -webkit-box-align:center;
   -ms-flex-align:center;
   align-items:center;
@@ -923,16 +923,19 @@
 /* new style added */
 /* The containerq */
 .containerq {
-display: block;
-position: relative;
-padding-left: 35px;
-margin-bottom: 35px;
-cursor: pointer;
-font-size: 22px;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+  display: block;
+  position: relative;
+  /* padding-left: 35px; */
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* background: antiquewhite; */
+  min-height: 40px;
+  padding: 11px;
 }
 
 /* Hide the browser's default radio button */
@@ -956,6 +959,14 @@ border-radius: 50%;
 /* On mouse-over, add a grey background color */
 .containerq:hover input ~ .checkmark {
 background-color: #ccc;
+}
+.containerq:hover {
+  background: #eee;
+  border-bottom-left-radius: 22px;
+  border-top-left-radius: 20px;
+}
+.containerq:active {
+  background: #dddddd
 }
 
 /* When the radio button is checked, add a blue background */
@@ -1085,7 +1096,51 @@ ul.horizontal-list li:before {
 .ordered {
   color: black;
   font-weight: 900;
-  margin: -8px -21px;
+  margin: -20px 0 0 3px;
   position: absolute;
   z-index: 1;
+}
+.green-icon {
+  color: #22e57e
+}
+.logout-text {
+  cursor: pointer;
+  float: right;
+}
+
+h2.caregiver .content {
+  color: #d53f98;
+}
+h2.creator .content {
+  color: #895ba5;
+}
+h2.explorer .content {
+  color: #46b4e8
+}
+h2.hero .content {
+  color: #2f3192
+}
+h2.innocent .content {
+  color: #f2cd46
+}
+h2.jester .content {
+  color: #b84f9e;
+}
+h2.lover .content {
+  color: #d63f40
+}
+h2.magician .content {
+  color: #eaae42
+}
+h2.member .content {
+  color: #60bb46
+}
+h2.outlaw .content {
+  color: #771818
+}
+h2.ruler .content {
+  color: #e0c542
+}
+h2.sage .content {
+  color: #49a687
 }

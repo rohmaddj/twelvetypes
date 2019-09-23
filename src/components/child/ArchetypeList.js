@@ -31,7 +31,7 @@ class ArchetypeList extends React.Component {
   render() {
     return (
       <div>
-        <Divider title="ARCHETYPE" text="Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem Lorem ipsum genesis ipsum lorem"/>
+        <Divider title="ARCHETYPE" text="Discovering what your Archetype is a good way of finding out your strengths and vulnerabilities as a person. It is also a good way of finding out where you can improve on you weaknesses leading you to optimize your abilities with dealing with every aspect of your life on a daily basis. Though it is true that everyone of us has a little bit of each characteristic traits of every Archetype, there are a few which dominates you as a representation of your behaviour and state of mind and only one that consolidates the entirety of your true inner being."/>
           <div className="ui middle aligned stackable grid container">
             <div className="row">
               <div className="eight wide column caregiver-card">

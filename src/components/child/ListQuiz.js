@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-class DemoQuiz extends React.Component {
+class ListQuiz extends React.Component {
   setChecked = (question, param) => {
     return 0 <= this.props.temp.indexOf(param)
   }
@@ -199,4 +199,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
 mapStateToProps
-)(DemoQuiz);
+)(ListQuiz);

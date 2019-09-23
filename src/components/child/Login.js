@@ -5,7 +5,7 @@ import twelveType from '../../api/twelveType';
 import LoginForm from './LoginForm';
 import UserCard from './UserCard';
 import { connect } from 'react-redux';
-import { signIn, signOut } from '../../actions';
+import { signIn, signOut, resetAnswers } from '../../actions';
 
 class Login extends React.Component {
   state = { email: '', password: '', inFetch: false, token: '', userName: '', userArchetype: '' }
@@ -30,15 +30,24 @@ class Login extends React.Component {
           email: this.state.email,
           password: this.state.password
         })
-        this.props.signIn(response.data.user.name, response.data.user.archetype, response.data.token);
+        var archetype = '';
+        if(response.data.user.archetype !== '') {
+          archetype = JSON.parse(response.data.user.archetype)
+        }
+        localStorage.setItem('authToken', response.data.token)
+        this.props.signIn(response.data.user.name, archetype, response.data.user.created_at, response.data.token);
         this.props.history.push('/dashboard');
       } else {
         this.setState({
           inFetch: false
         })
-        this.props.signOut();
+        this.props.resetAnswers()
+        this.props.signOut()
       }
     } catch (error) {
+      this.setState({
+        inFetch: false
+      })
       console.log(error)
     }
   }
@@ -51,7 +60,7 @@ class Login extends React.Component {
           <div className="row">
             <div className="seven wide column">
               <h3 className="ui header">Take a free quiz first?</h3>
-              <p>That is what they all say about us I shouldn't have gone with their competitor I shouldn't have gone with their competitor..</p>
+              <p>Find out which archetype you are and discover more surprising things that you never knew about yourself, take our free archetypal assessment quiz!</p>
               <Link className="ui huge button" to="/quiz">TAKE THE QUIZ <i className="caret square right icon"></i></Link>
             </div>
             { this.props.isSignedIn ?
@@ -86,5 +95,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps,
-  { signIn, signOut}
+  { signIn, signOut, resetAnswers}
 )(Login);

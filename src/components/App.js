@@ -13,8 +13,8 @@ import ArchetypePage from './pages/ArchetypePage';
 
 import DashboardPage from './pages/DashboardPage';
 import SidebarMenu from './child/SidebarMenu';
-import DemoPage from './pages/DemoPage';
 import DemoResultPage from './pages/DemoResultPage';
+import { PrivateRoute } from './child/PrivateRoute';
 class App extends React.Component {
 
   render() {
@@ -23,17 +23,16 @@ class App extends React.Component {
       <BrowserRouter basename="/twelvetypes">
         <Header />
         <Route path="/" exact component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/archetype" component={ArchetypePage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/quiz" component={QuizPage} />
-        <Route path="/register" component={Register} />
-        <Route path="/menu" component={SidebarMenu} />
-        <Route path="/demo" component={DemoPage} />
-        <Route path="/demo-result" component={DemoResultPage} />
+        <Route exact path="/about" component={AboutPage} />
+        <Route exact path="/archetype" component={ArchetypePage} />
+        <Route exact path="/contact" component={ContactPage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/quiz" component={QuizPage} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/menu" component={SidebarMenu} />
+        <Route exact path="/demo-result" component={DemoResultPage} />
 
-        <Route path="/dashboard" component={DashboardPage} />
+        <PrivateRoute path="/dashboard" component={DashboardPage} />
         <Footer />
       </BrowserRouter>
     </div>

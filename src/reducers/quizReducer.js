@@ -21,6 +21,10 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state, answers: [...state.answers, ...action.answers]
       }
+    case 'RESET_ANSWERS':
+      return {
+        ...state, answers: []
+      }
     case 'ADD_QUIZ':
       return {
         ...state,

@@ -1,5 +1,5 @@
 import React from 'react';
-import OptionList from './OptionList';
+import OptionList from './OptionListTemp';
 import { connect } from 'react-redux';
 
 class QuizList extends React.Component {
