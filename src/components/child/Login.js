@@ -3,12 +3,11 @@ import Divider from './Divider';
 import { Link } from 'react-router-dom';
 import twelveType from '../../api/twelveType';
 import LoginForm from './LoginForm';
-import UserCard from './UserCard';
 import { connect } from 'react-redux';
 import { signIn, signOut, resetAnswers } from '../../actions';
 
 class Login extends React.Component {
-  state = { email: '', password: '', inFetch: false, token: '', userName: '', userArchetype: '' }
+  state = { email: '', password: '', inFetch: false, message: '' }
 
   onInputChange = (event, type) => {
     if(type === 'email') {
@@ -36,7 +35,9 @@ class Login extends React.Component {
         }
         localStorage.setItem('authToken', response.data.token)
         this.props.signIn(response.data.user.name, archetype, response.data.user.created_at, response.data.token);
-        this.props.history.push('/dashboard');
+        this.setState({
+          message: 'success'
+        }, () => setTimeout(() => this.props.history.push('/dashboard'), 2000))
       } else {
         this.setState({
           inFetch: false
@@ -46,7 +47,8 @@ class Login extends React.Component {
       }
     } catch (error) {
       this.setState({
-        inFetch: false
+        inFetch: false,
+        message: 'fail'
       })
       console.log(error)
     }
@@ -63,21 +65,14 @@ class Login extends React.Component {
               <p>Find out which archetype you are and discover more surprising things that you never knew about yourself, take our free archetypal assessment quiz!</p>
               <Link className="ui huge button" to="/quiz">TAKE THE QUIZ <i className="caret square right icon"></i></Link>
             </div>
-            { this.props.isSignedIn ?
-              <UserCard
-                name={this.props.username}
-                onSubmit={this.onSubmit}
-                archetype={this.props.archetype}
-              />
-              :
               <LoginForm
                 onInputChange={this.onInputChange}
                 onSubmit={this.onSubmit}
                 inFetch={this.state.inFetch}
                 email={this.state.email}
                 password={this.state.password}
+                message={this.state.message}
               />
-            }
           </div>
         </div>
       </div>

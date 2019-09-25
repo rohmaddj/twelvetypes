@@ -1,10 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { connect } from 'react-redux'
+import { Placeholder } from 'semantic-ui-react'
 
 class ListQuiz extends React.Component {
   setChecked = (question, param) => {
     return 0 <= this.props.temp.indexOf(param)
   }
+
   render() {
     const questions = this.props.questions.map((question) => {
       return (
@@ -14,7 +16,7 @@ class ListQuiz extends React.Component {
           </div>
           <div className="decision">
             <div className="options">
-              <div className="ui grid">
+              <div className={ this.props.mobile ? 'row' : 'ui grid' }>
                 <div className="eight wide column">
                   <label className="containerq" >
                     <input type="checkbox"
@@ -181,7 +183,60 @@ class ListQuiz extends React.Component {
     return (
       <div className="questions-area">
         <div className="test-questions comp">
-          {questions}
+        { this.props.placeholder ?
+          <div className="question">
+            <div className="statement">
+              <Placeholder fluid>
+                <Placeholder.Line />
+                <Placeholder.Line />
+              </Placeholder>
+            </div>
+            <div className="decision">
+              <div className="options">
+                <div className={ this.props.mobile ? 'row' : 'ui grid' }>
+                  <div className="eight wide column">
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                </div>
+                  <div className="eight wide column">
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                  <Placeholder>
+                    <Placeholder.Line />
+                    <Placeholder.Line />
+                  </Placeholder>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        :
+          questions
+        }
         </div>
       </div>
     );

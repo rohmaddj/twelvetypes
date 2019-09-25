@@ -1144,3 +1144,22 @@ h2.ruler .content {
 h2.sage .content {
   color: #49a687
 }
+.ui.progress, .ui.progress-custom .bar {
+  border: none;
+  border-radius: 0
+}
+.ui.header .content {
+  text-transform: capitalize
+}
+.ui.button.custom-background-orange {
+  background: #ec6562;
+}
+.ui.button.custom-background-orange:hover {
+  background: #c9c5c5;
+}
+.ui.centered.column.row.remove-padding {
+  padding: 0
+}
+h2.ui.header.custom {
+  color: #000000
+}

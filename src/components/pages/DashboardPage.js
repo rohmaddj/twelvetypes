@@ -3,79 +3,21 @@ import { connect } from 'react-redux';
 import twelveType from '../../api/twelveType';
 import Divider from '../child/Divider';
 import { updateUser, storeResult, signOut, signIn, resetAnswers } from '../../actions/index';
-import { Grid, Container, Image, Header, Button } from 'semantic-ui-react';
+import { Container, Image, Header, Placeholder } from 'semantic-ui-react';
 import Chart from 'react-apexcharts'
+import { Link } from 'react-router-dom'
 
 class DashboardPage extends React.Component {
   constructor() {
     super()
     this.state = {
-      // optionsBar: {
-      //   chart: {
-      //     stacked: true,
-      //     stackType: '100%',
-      //     toolbar: {
-      //       show: false
-      //     }
-      //   },
-      //   plotOptions: {
-      //     bar: {
-      //       horizontal: true,
-      //     },
-      //   },
-      //   dataLabels: {
-      //     dropShadow: {
-      //       enabled: true
-      //     }
-      //   },
-      //   stroke: {
-      //     width: 0,
-      //   },
-      //   xaxis: {
-      //     categories: [''],
-      //     type: 'Top Archetype',
-      //     labels: {
-      //       show: false
-      //     },
-      //     axisBorder: {
-      //       show: false
-      //     },
-      //     axisTicks: {
-      //       show: false
-      //     }
-      //   },
-      //   fill: {
-      //     opacity: 1,
-      //     type: 'gradient',
-      //     gradient: {
-      //       shade: 'dark',
-      //       type: "vertical",
-      //       shadeIntensity: 0.35,
-      //       gradientToColors: undefined,
-      //       inverseColors: false,
-      //       opacityFrom: 0.85,
-      //       opacityTo: 0.85,
-      //       stops: [90, 0, 100]
-      //     },
-      //   },
-
-      //   legend: {
-      //     position: 'bottom',
-      //     horizontalAlign: 'right',
-      //   }
-      // },
-      // seriesBar: [{
-      //   name: 'blue',
-      //   data: [100]
-      // }, {
-      //   name: 'green',
-      //   data: [0]
-      // }, {
-      //   name: 'yellow',
-      //   data: [0]
-      // }],
+      placeholder: true,
       optionsPie: {
-        labels: ['A']
+        labels: ['A'],
+        dataLabels: {
+          offset: 0,
+          minAngleToShowLabel: 10
+        }
       },
       seriesPie: [100],
       chart: false
@@ -83,6 +25,7 @@ class DashboardPage extends React.Component {
   }
 
   componentDidUpdate = async (prevProps) => {
+    window.scrollTo(0, 0)
     if(this.props.archetype !== prevProps.archetype) {
       if (this.props.archetype.length > 0 && this.props.answers.length === 0) {
         try {
@@ -99,8 +42,34 @@ class DashboardPage extends React.Component {
           // pie update data
           const newPieLabels = Object.keys(response.data.top_answers)
           const newPieSeries = []
+          const newPieColors = []
           newPieLabels.map((data) => {
             newPieSeries.push(response.data.top_answers[data])
+            if(data === 'caregiver') {
+              newPieColors.push('#d53f98')
+            } else if(data === 'creator') {
+              newPieColors.push('#895ba5')
+            } else if(data === 'explorer') {
+              newPieColors.push('#46b4e8')
+            } else if(data === 'hero') {
+              newPieColors.push('#2f3192')
+            } else if(data === 'innocent') {
+              newPieColors.push('#f2cd46')
+            } else if(data === 'jester') {
+              newPieColors.push('#b84f9e')
+            } else if(data === 'lover') {
+              newPieColors.push('#d63f40')
+            } else if(data === 'magician') {
+              newPieColors.push('#eaae42')
+            } else if(data === 'member') {
+              newPieColors.push('#60bb46')
+            } else if(data === 'outlaw') {
+              newPieColors.push('#771818')
+            } else if(data === 'ruler') {
+              newPieColors.push('#e0c542')
+            } else if(data === 'sage') {
+              newPieColors.push('#49a687')
+            }
             return true
           })
 
@@ -108,11 +77,12 @@ class DashboardPage extends React.Component {
             seriesPie: newPieSeries,
             optionsPie: {
               labels: newPieLabels,
-              legend: { show:false}
+              legend: { show:false},
+              colors: newPieColors
             },
-            chart: true
+            chart: true,
+            placeholder: false
           })
-
         } catch {
           console.log('error bro');
         }
@@ -121,7 +91,6 @@ class DashboardPage extends React.Component {
   }
 
   componentDidMount = async () => {
-    console.log(this.props.archetype.length , this.props.answers.length === 0)
     window.scrollTo(0, 0)
 
     if(localStorage.getItem('authToken') === null) {
@@ -142,8 +111,34 @@ class DashboardPage extends React.Component {
         // pie update data
         const newPieLabels = Object.keys(response.data.top_answers)
         const newPieSeries = []
+        const newPieColors = []
         newPieLabels.map((data) => {
           newPieSeries.push(response.data.top_answers[data])
+          if(data === 'caregiver') {
+            newPieColors.push('#d53f98')
+          } else if(data === 'creator') {
+            newPieColors.push('#895ba5')
+          } else if(data === 'explorer') {
+            newPieColors.push('#46b4e8')
+          } else if(data === 'hero') {
+            newPieColors.push('#2f3192')
+          } else if(data === 'innocent') {
+            newPieColors.push('#f2cd46')
+          } else if(data === 'jester') {
+            newPieColors.push('#b84f9e')
+          } else if(data === 'lover') {
+            newPieColors.push('#d63f40')
+          } else if(data === 'magician') {
+            newPieColors.push('#eaae42')
+          } else if(data === 'member') {
+            newPieColors.push('#60bb46')
+          } else if(data === 'outlaw') {
+            newPieColors.push('#771818')
+          } else if(data === 'ruler') {
+            newPieColors.push('#e0c542')
+          } else if(data === 'sage') {
+            newPieColors.push('#49a687')
+          }
           return true
         })
 
@@ -162,9 +157,11 @@ class DashboardPage extends React.Component {
           seriesPie: newPieSeries,
           optionsPie: {
             labels: newPieLabels,
-            legend: { show:false}
+            legend: { show:false},
+            colors: newPieColors
           },
-          chart: true
+          chart: true,
+          placeholder: false
         })
 
       } catch {
@@ -185,8 +182,34 @@ class DashboardPage extends React.Component {
         // pie update data
         const newPieLabels = Object.keys(response.data.top_answers)
         const newPieSeries = []
+        const newPieColors = []
         newPieLabels.map((data) => {
           newPieSeries.push(response.data.top_answers[data])
+          if(data === 'caregiver') {
+            newPieColors.push('#d53f98')
+          } else if(data === 'creator') {
+            newPieColors.push('#895ba5')
+          } else if(data === 'explorer') {
+            newPieColors.push('#46b4e8')
+          } else if(data === 'hero') {
+            newPieColors.push('#2f3192')
+          } else if(data === 'innocent') {
+            newPieColors.push('#f2cd46')
+          } else if(data === 'jester') {
+            newPieColors.push('#b84f9e')
+          } else if(data === 'lover') {
+            newPieColors.push('#d63f40')
+          } else if(data === 'magician') {
+            newPieColors.push('#eaae42')
+          } else if(data === 'member') {
+            newPieColors.push('#60bb46')
+          } else if(data === 'outlaw') {
+            newPieColors.push('#771818')
+          } else if(data === 'ruler') {
+            newPieColors.push('#e0c542')
+          } else if(data === 'sage') {
+            newPieColors.push('#49a687')
+          }
           return true
         })
 
@@ -194,9 +217,11 @@ class DashboardPage extends React.Component {
           seriesPie: newPieSeries,
           optionsPie: {
             labels: newPieLabels,
-            legend: { show:false}
+            legend: { show:false},
+            colors: newPieColors
           },
-          chart: true
+          chart: true,
+          placeholder: false
         })
 
       } catch {
@@ -220,57 +245,76 @@ class DashboardPage extends React.Component {
   render() {
     return (
       <div className="ui vertical stripe quote segment">
-        <Divider title={'Here Are Your Results, '+ this.props.username} />
-        <div className="ui container">
-        <Grid>
-          <Grid.Column width={7}>
-            {/* <Card>
-            <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>{this.props.username}</Card.Header>
-              <Card.Meta>
-                <span className='date'>Joined in { this.props.register.substr(0,4)}</span>
-              </Card.Meta>
-              <Card.Description>
-                {this.props.username} is a {this.props.result.length > 0 ? Object.keys(this.props.result[0]) : 'You should take quiz first to describe your archetype'}.
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <span>
-                <Icon name='circle' className="green-icon" />
-                Online
-              </span>
-              <span onClick={() => this.onSignOut()} className="logout-text">
-                <Icon name='sign in alternate' className="red-icon" />
-                Logout
-              </span>
-            </Card.Content>
-          </Card> */}
-              <Chart
-                options={this.state.optionsPie}
-                series={this.state.seriesPie}
-                type="donut"
-                width="450"
-              />
-            </Grid.Column>
-            <Grid.Column width={9}>
-              <Header as='h2'>Archetype Personality Summary</Header>
-              { this.props.result.map((data) => {
-                var archetype = Object.keys(data)[0]
-                return <Container key={archetype}>
-                <Header as='h2' className={archetype}>
-                  <Image src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${Object.keys(data)[0]}.webp`} />
-                  <Header.Content>{data[archetype] + " " + archetype}</Header.Content>
-                </Header>
-                <p>{data.interpretation.content}</p>
-                <br/>
-              </Container>
-              }) }
-            </Grid.Column>
-          </Grid>
-          <Button onClick={this.onSignOut}>Sign Out</Button>
+        <Divider title={`Here Are Your Results, ${this.props.username}`} />
+        <div className="ui stackable grid container">
+      { this.state.placeholder ?
+        <div className="row">
+          <div className="seven wide column">
+            <Placeholder>
+              <Placeholder.Image square />
+            </Placeholder>
+          </div>
+          <div className="nine wide column">
+            <Placeholder>
+              <Placeholder.Line />
+              <Placeholder.Line />
+            </Placeholder>
+            <Placeholder>
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+            </Placeholder>
+            <Placeholder>
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+            </Placeholder>
+            <Placeholder>
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+              <Placeholder.Line />
+            </Placeholder>
+          </div>
+        </div>
+      :
+        <div className="row">
+          <div className="seven wide column">
+            <Chart
+              options={this.state.optionsPie}
+              series={this.state.seriesPie}
+              type="donut"
+            />
+          </div>
+          <div className="nine wide column">
+            <Header as='h2' className="custom">Archetype Personality Summary</Header>
+            { this.props.result.map((data) => {
+              var archetype = Object.keys(data)[0]
+              return <Container key={archetype}>
+              <Header as='h2' className={archetype}>
+                <Image src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${Object.keys(data)[0]}.webp`} />
+                <Header.Content>{data[archetype] + " " + archetype}</Header.Content>
+              </Header>
+              <p>{data.interpretation.content}</p>
+              <br/>
+            </Container>
+            }) }
+          </div>
+        </div>
+      }
+        <div className="ui centered column row remove-padding">
+          { this.state.placeholder ?
+            <Placeholder>
+              <Placeholder.Line />
+            </Placeholder>
+          :
+            <Link to='/archetype' className="ui huge submit button custom-background-orange">Learn More About My Archetypes</Link>
+          }
         </div>
       </div>
+    </div>
     )
   }
 }

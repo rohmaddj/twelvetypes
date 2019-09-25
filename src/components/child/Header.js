@@ -10,16 +10,20 @@ import { signIn } from '../../actions'
 class Header extends React.Component {
   componentDidMount = async () => {
     if(localStorage.getItem('authToken') !== null) {
-      const response = await twelveType.get('/auth', {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('authToken')
+      try {
+        const response = await twelveType.get('/auth', {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('authToken')
+          }
+        })
+        var archetype = '';
+        if(response.data.user.archetype !== '') {
+          archetype = JSON.parse(response.data.user.archetype)
         }
-      })
-      var archetype = '';
-      if(response.data.user.archetype !== '') {
-        archetype = JSON.parse(response.data.user.archetype)
+        this.props.signIn(response.data.user.name, archetype, response.data.user.created_at, localStorage.getItem('authToken'))
+      }catch {
+        console.log('ok')
       }
-      this.props.signIn(response.data.user.name, archetype, response.data.user.created_at, localStorage.getItem('authToken'))
     }
   }
 

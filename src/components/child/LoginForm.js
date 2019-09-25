@@ -27,6 +27,8 @@ const LoginForm = (props) => {
             <i className="lock icon"></i>
           </div>
         </div>
+        { props.message === 'fail' ? <div className="ui red message">Password/Email doesn't match</div> : ''}
+        { props.message === 'success' ? <div className="ui green message">Login Successfully</div> : ''}
         { props.inFetch ?
         <div className="ui huge loading button login"></div>
         : <div className="ui huge submit button login" onClick={() => props.onSubmit('login')}>LOGIN</div> }
