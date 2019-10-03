@@ -1,6 +1,6 @@
-import React from 'react';
-import ArchetypeList from '../child/ArchetypeList';
-import ArchetypeDetail from '../child/ArchetypeDetail';
+import React from "react"
+import ArchetypeList from "../child/ArchetypeList"
+import ArchetypeDetail from "../child/ArchetypeDetail"
 
 class ArchetypePage extends React.Component {
   state = { detail: false }
@@ -23,15 +23,11 @@ class ArchetypePage extends React.Component {
   render() {
     return (
       <div className="ui vertical stripe quote segment">
-        { this.state.detail ?
-          <ArchetypeDetail
-            onButtonBackClick={ () => this.onButtonBackClick() }
-          />
-          :
-          <ArchetypeList
-            onImageClick={ () => this.onImageClick() }
-          />
-        }
+        {this.state.detail ? (
+          <ArchetypeDetail onButtonBackClick={() => this.onButtonBackClick()} />
+        ) : (
+          <ArchetypeList onImageClick={() => this.onImageClick()} />
+        )}
       </div>
     )
   }

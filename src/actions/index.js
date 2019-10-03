@@ -1,6 +1,6 @@
 export const signIn = (username, archetype, register, token) => {
   return {
-    type: 'SIGN_IN',
+    type: "SIGN_IN",
     username: username,
     archetype: archetype,
     register: register,
@@ -10,13 +10,13 @@ export const signIn = (username, archetype, register, token) => {
 
 export const signOut = () => {
   return {
-    type: 'SIGN_OUT'
+    type: "SIGN_OUT"
   }
 }
 
 export const updateUser = (username, archetype, register, token) => {
   return {
-    type: 'UPDATE_USER',
+    type: "UPDATE_USER",
     username: username,
     archetype: archetype,
     register: register,
@@ -26,44 +26,44 @@ export const updateUser = (username, archetype, register, token) => {
 
 export const addQuestions = (questions, options, category) => {
   return {
-    type: 'ADD_QUESTIONS',
+    type: "ADD_QUESTIONS",
     questions: questions,
     options: options,
     category: category
   }
 }
 
-export const addAnswers = (answers) => {
+export const addAnswers = answers => {
   return {
-    type: 'ADD_ANSWERS',
+    type: "ADD_ANSWERS",
     answers: answers
   }
 }
 
 export const resetAnswers = () => {
   return {
-    type: 'RESET_ANSWERS',
+    type: "RESET_ANSWERS",
     answers: []
   }
 }
 
-export const addQuiz = (questions) => {
+export const addQuiz = questions => {
   return {
-    type: 'ADD_QUIZ',
-    questions: questions,
+    type: "ADD_QUIZ",
+    questions: questions
   }
 }
 
-export const storeResult = (percentage) => {
+export const storeResult = percentage => {
   return {
-    type: 'STORE_RESULT',
+    type: "STORE_RESULT",
     result: percentage
   }
 }
 
-export const addTemp = (answers) => {
+export const addTemp = answers => {
   return {
-    type: 'ADD_TEMP',
+    type: "ADD_TEMP",
     temp: answers
   }
 }
@@ -75,9 +75,16 @@ export const resetTemp = () => {
   }
 }
 
-export const changeTemp = (answer) => {
+export const changeTemp = answer => {
   return {
-    type: 'CHANGE_TEMP',
-    answer: answer,
+    type: "CHANGE_TEMP",
+    answer: answer
+  }
+}
+
+export const addPersonalised = personalised => {
+  return {
+    type: "ADD_PERSONALISED",
+    personalised: personalised
   }
 }

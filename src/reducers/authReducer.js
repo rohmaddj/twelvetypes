@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'SIGN_IN':
+    case "SIGN_IN":
       return {
         ...state,
         isSignedIn: true,
@@ -17,9 +17,9 @@ export default (state = INITIAL_STATE, action) => {
         register: action.register,
         token: action.token
       }
-    case 'SIGN_OUT':
-        return { ...state, isSignedIn: false }
-    case 'UPDATE_USER':
+    case "SIGN_OUT":
+      return { ...state, isSignedIn: false }
+    case "UPDATE_USER":
       return {
         ...state,
         username: action.username,

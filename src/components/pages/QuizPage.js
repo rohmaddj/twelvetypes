@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { addQuiz, addAnswers, addTemp, resetTemp, changeTemp } from '../../actions';
 
 class QuizPage extends React.Component {
+
   state = { percent: 0, open: false , mobile: false, placeholder: true }
 
   show = (size) => this.setState({ size, open: true }) // open modal configuration
@@ -44,7 +45,7 @@ class QuizPage extends React.Component {
   componentDidUpdate = (prevProps) => {
     if(prevProps.temp.length !== this.props.temp.length) {
       if(this.props.temp.length === 3) {
-        window.scrollTo(0, document.body.scrollHeight)
+        window.scrollTo({top: 100, behavior: 'smooth'})
       }
     }
   }
@@ -52,7 +53,7 @@ class QuizPage extends React.Component {
   onNextButton = async (id) => {
     this.setState({
       placeholder: true
-    }, () => window.scrollTo(0, 0))
+    }, () => window.scrollTo({top: 0, behavior: 'smooth'}))
 
     const response = await twelveType.get('/quizQuestion', {
       params: { id: id }

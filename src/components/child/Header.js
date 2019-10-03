@@ -22,7 +22,7 @@ class Header extends React.Component {
         }
         this.props.signIn(response.data.user.name, archetype, response.data.user.created_at, localStorage.getItem('authToken'))
       }catch {
-        console.log('ok')
+        localStorage.removeItem('authToken')
       }
     }
   }

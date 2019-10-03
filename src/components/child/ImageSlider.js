@@ -92,7 +92,7 @@ class ImageSlider extends React.Component {
   render() {
     return (
       <div className="ui inverted vertical masthead center aligned segment linear-background">
-        <div className="ui text container">
+        <div className="ui text container overflow-custom">
           {/* <h1 className="ui inverted header">
             Imagine-a-Company
           </h1>

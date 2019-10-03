@@ -1094,7 +1094,7 @@ ul.horizontal-list li:before {
   color: #cccc;
 }
 .ordered {
-  color: black;
+  color: white;
   font-weight: 900;
   margin: -20px 0 0 3px;
   position: absolute;
@@ -1162,4 +1162,7 @@ h2.sage .content {
 }
 h2.ui.header.custom {
   color: #000000
+}
+.overflow-custom {
+  overflow: hidden;
 }
