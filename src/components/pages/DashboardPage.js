@@ -12,6 +12,7 @@ import {
 import { Container, Image, Header, Placeholder } from "semantic-ui-react"
 import Chart from "react-apexcharts"
 import { Link } from "react-router-dom"
+import PlaceholderDashboard from "../child/placeholder/PlaceholderDashboard"
 
 class DashboardPage extends React.Component {
   constructor() {
@@ -277,37 +278,7 @@ class DashboardPage extends React.Component {
         <Divider title={`Here Are Your Results, ${this.props.username}`} />
         <div className="ui stackable grid container">
           {this.state.placeholder ? (
-            <div className="row">
-              <div className="seven wide column">
-                <Placeholder>
-                  <Placeholder.Image square />
-                </Placeholder>
-              </div>
-              <div className="nine wide column">
-                <Placeholder>
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                </Placeholder>
-                <Placeholder>
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                </Placeholder>
-                <Placeholder>
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                </Placeholder>
-                <Placeholder>
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                  <Placeholder.Line />
-                </Placeholder>
-              </div>
-            </div>
+            <PlaceholderDashboard />
           ) : (
             <div className="row">
               <div className="seven wide column">

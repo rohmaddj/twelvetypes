@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Placeholder } from 'semantic-ui-react'
+import PlaceholderQuiz from './placeholder/PlaceholderQuiz'
 
 class ListQuiz extends React.Component {
   setChecked = (question, param) => {
@@ -184,57 +184,8 @@ class ListQuiz extends React.Component {
       <div className="questions-area">
         <div className="test-questions comp">
         { this.props.placeholder ?
-          <div className="question">
-            <div className="statement">
-              <Placeholder fluid>
-                <Placeholder.Line />
-                <Placeholder.Line />
-              </Placeholder>
-            </div>
-            <div className="decision">
-              <div className="options">
-                <div className={ this.props.mobile ? 'row' : 'ui grid' }>
-                  <div className="eight wide column">
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                </div>
-                  <div className="eight wide column">
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        :
+          <PlaceholderQuiz mobile={this.props.mobile} />
+          :
           questions
         }
         </div>
