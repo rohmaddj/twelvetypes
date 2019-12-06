@@ -1171,3 +1171,20 @@ h2.ui.header.custom {
   color: #000000;
   border-bottom: 2px solid #bbb
 }
+
+.ui.vertical.stripe .button + h3, .ui.vertical.stripe p + h3 {
+  margin-top: 0;
+}
+.left-line {
+  border-left: 10px solid #ddd;
+  margin-left: 1.8em;
+  padding-left: 2.7em;
+  padding-bottom: 4em;
+  padding-top: 3em;
+}
+.ui.header {
+  margin-bottom: 0;
+}
+.quote.stripe.segment .grid .column {
+  padding: 2em 1em;
+}
