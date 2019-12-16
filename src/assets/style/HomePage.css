@@ -3,7 +3,7 @@
 }
 
 .column.explorer::after {
-  background-image: url(https://twelvetypes.com/img/archetype/Explorer.jpg);
+  background-image: url("https://api.individualogist.com/img/archetype/Explorer.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -19,7 +19,7 @@
   z-index: -1;
 }
 .column.outlaw::after {
-  background-image: url(https://twelvetypes.com/img/archetype/OutlawC.jpg);
+  background-image: url("https://api.individualogist.com/img/archetype/OutlawC.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -1187,4 +1187,19 @@ h2.ui.header.custom {
 }
 .quote.stripe.segment .grid .column {
   padding: 2em 1em;
+}
+.section-title {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  background: #52beb2;
+  margin: 1em auto;
+  padding: .5em 1em;
+}
+p.personalised {
+  margin-top: 25px;
+}
+span.bold {
+  font-weight: bold;
 }
