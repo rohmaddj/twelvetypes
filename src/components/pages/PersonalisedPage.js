@@ -5,6 +5,7 @@ import { Placeholder, Image, Container, Header } from "semantic-ui-react";
 import Divider from "../child/Divider";
 import { Link } from "react-router-dom";
 import { addPersonalised } from "../../actions";
+import HeaderPersonalised from "../child/personalised/HeaderPersonalised";
 
 class PersonalisedPage extends React.Component {
   state = { listArchetype: [], placeholder: true, primaryTraits: "" };
@@ -131,9 +132,9 @@ class PersonalisedPage extends React.Component {
           </Header>
           <div class="left-line">
             <h3 className="ui header">Strengths:</h3>
-            <p>{archetype.p2}</p>
+            <p className="text-silver">{archetype.p2}</p>
             <h3 className="ui header">Weaknesses:</h3>
-            <p>{archetype.p3}</p>
+            <p className="text-silver">{archetype.p3}</p>
           </div>
         </Container>
       );
@@ -150,7 +151,7 @@ class PersonalisedPage extends React.Component {
           </Header>
           <div class="left-line">
             <h3 className="ui header">Goals:</h3>
-            <p>{archetype.p4}</p>
+            <p className="text-silver">{archetype.p4}</p>
           </div>
         </Container>
       );
@@ -167,7 +168,7 @@ class PersonalisedPage extends React.Component {
           </Header>
           <div class="left-line">
             <h3 className="ui header">Fears:</h3>
-            <p>{archetype.p5}</p>
+            <p className="text-silver">{archetype.p5}</p>
           </div>
         </Container>
       );
@@ -184,7 +185,7 @@ class PersonalisedPage extends React.Component {
           </Header>
           <div class="left-line">
             <h3 className="ui header">Challenges &amp; Dragons:</h3>
-            <p>{archetype.p6}</p>
+            <p className="text-silver">{archetype.p6}</p>
           </div>
         </Container>
       );
@@ -201,7 +202,7 @@ class PersonalisedPage extends React.Component {
           </Header>
           <div class="left-line">
             <h3 className="ui header">Resolutions:</h3>
-            <p>{archetype.p7}</p>
+            <p className="text-silver">{archetype.p7}</p>
           </div>
         </Container>
       );
@@ -249,63 +250,67 @@ class PersonalisedPage extends React.Component {
           <div className="ui middle aligned stackable grid container">
             <div className="row">
               <div className="sixteen wide column">
-                <h3 className="ui header">Hi {this.props.username}, here are your personalised results:</h3>
+                <h3 className="ui header black">
+                  Hi <span className="username">{this.props.username}</span>, here are your personalised results:
+                </h3>
               </div>
             </div>
-            <p>
+            <p className="marginLeft25">
               The archetypes forming your personality comprises an incredibly unique combination, representing a
               harmonious synergy between your primary traits: <span className="bold">{this.state.primaryTraits}</span>
             </p>
-            <p>Let's start with looking into the core strengths and weaknesses of your personality's archetypes.</p>
-            <h2 className="ui container section-title">Strengths &amp; Weaknesses</h2>
+            <p className="marginLeft25">
+              Let's start with looking into the core strengths and weaknesses of your personality's archetypes.
+            </p>
+            <HeaderPersonalised title="Strengths &amp; Weaknesses"></HeaderPersonalised>
             {StrengthsAndWeaknesses}
-            <p className="personalised">
+            <p className="personalised text-silver">
               Each archetype within your personality has specific goals and objectives it yearns to achieve, which could
               shed some much needed light unto your purpose and direction.
             </p>
 
-            <h2 className="ui container section-title">Goals</h2>
+            <HeaderPersonalised title="Goals"></HeaderPersonalised>
             {Goals}
-            <p className="personalised">
+            <p className="personalised text-silver">
               Following this path, you will eventually fulfill this destiny. Each step you take will contribute to this
               seemingly impossible goal of being able to help others on a grander scale of things. The key is in
               carrying on, no matter how dark the path may be.
             </p>
-            <p>
+            <p className="text-silver">
               Now, based on your personality, there are several fears that are likely to stand in your way. Let's
               confront some of the most fears that are commonly associated with your personality archetypes.
             </p>
 
-            <h2 className="ui container section-title">Fears</h2>
+            <HeaderPersonalised title="Fears"></HeaderPersonalised>
             {Fears}
-            <p className="personalised">
+            <p className="personalised text-silver">
               With that, you will do everything in your power to prevent such from happening and as your personality
               comprises the caregiver, creator and, explorer archetypes, realizing your fears and weak points will not
               always lead you to the worst scenarios. Instead, taking them in rationally will allow you to prevent or
               avoid them. Being aware of your negative tendencies and thoughts will lead you to higher levels of
               self-mastery.
             </p>
-            <p>
+            <p className="text-silver">
               As a result of these fears, there are several challenges, or dragons as we like to call them, that tend to
               arise. These are a few examples of what could stand in your way through the course of your life.
             </p>
 
-            <h2 className="ui container section-title">Challenges &amp; Dragons</h2>
+            <HeaderPersonalised title="Challenges &amp; Dragons"></HeaderPersonalised>
             {ChallengesAndDragons}
-            <p className="personalised">
+            <p className="personalised text-silver">
               Each archetype will always have their dragons, as this is one way for their archetype to grow. By slaying
               one dragon, a bigger one will always come up, and each time you do conquer it, you move a tier higher in
               the quest of life.
             </p>
-            <p>
+            <p className="text-silver">
               Given that each archetype must face their own dragon/challenge, it is necessary to have an idea of a
               general resolution or response to those challenges. When things get rough for you, going back to this core
               response will help you regain focus on beating that dragon.
             </p>
 
-            <h2 className="ui container section-title">Resolution</h2>
+            <HeaderPersonalised title="Resolution"></HeaderPersonalised>
             {Resolution}
-            <p className="personalised">
+            <p className="personalised text-silver">
               The whole point of going back to the core idea of your response is to continually evaluate if you are
               living out your archetype in a way that doesn't empower your dragon. Paying attention to key indicators
               can help prevent such from happening, leading you to a healthier, centred, and more self-aware sense of

@@ -16,6 +16,7 @@ import SidebarMenu from "./child/SidebarMenu";
 import DemoResultPage from "./pages/DemoResultPage";
 import { PrivateRoute } from "./child/PrivateRoute";
 import PersonalisedPage from "./pages/PersonalisedPage";
+import SalesLetterPage from "./pages/SalesLetterPage";
 class App extends React.Component {
   render() {
     return (
@@ -31,7 +32,8 @@ class App extends React.Component {
           <Route exact path="/register" component={Register} />
           <Route exact path="/menu" component={SidebarMenu} />
           <Route exact path="/demo-result" component={DemoResultPage} />
-          <Route exact path="/archetype-details" component={PersonalisedPage} />
+          <Route exact path="/personalised" component={PersonalisedPage} />
+          <Route exact path="/offer" component={SalesLetterPage} />
 
           <PrivateRoute path="/dashboard" component={DashboardPage} />
           <Footer />

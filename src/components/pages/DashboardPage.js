@@ -1,22 +1,17 @@
-import React from "react"
-import { connect } from "react-redux"
-import twelveType from "../../api/twelveType"
-import Divider from "../child/Divider"
-import {
-  updateUser,
-  storeResult,
-  signOut,
-  signIn,
-  resetAnswers
-} from "../../actions/index"
-import { Container, Image, Header, Placeholder } from "semantic-ui-react"
-import Chart from "react-apexcharts"
-import { Link } from "react-router-dom"
-import PlaceholderDashboard from "../child/placeholder/PlaceholderDashboard"
+import React from "react";
+import { connect } from "react-redux";
+import twelveType from "../../api/twelveType";
+import Divider from "../child/Divider";
+import { updateUser, storeResult, signOut, signIn, resetAnswers } from "../../actions/index";
+import { Container, Image, Header, Placeholder } from "semantic-ui-react";
+import Chart from "react-apexcharts";
+import { Link } from "react-router-dom";
+import PlaceholderDashboard from "../child/placeholder/PlaceholderDashboard";
+import HeaderPersonalised from "../child/personalised/HeaderPersonalised";
 
 class DashboardPage extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       placeholder: true,
       optionsPie: {
@@ -28,13 +23,13 @@ class DashboardPage extends React.Component {
       },
       seriesPie: [100],
       chart: false
-    }
+    };
   }
 
   componentDidUpdate = async prevProps => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     if (localStorage.getItem("authToken") === null) {
-      this.props.history.push("/login")
+      this.props.history.push("/login");
     }
     if (this.props.archetype !== prevProps.archetype) {
       if (this.props.archetype.length > 0 && this.props.answers.length === 0) {
@@ -46,43 +41,43 @@ class DashboardPage extends React.Component {
             params: {
               answers: this.props.archetype
             }
-          })
+          });
           // this.props.updateUser(response.data.user.name, response.data.user.archetype, response.data.user.created_at, this.props.token)
-          this.props.storeResult(response.data.percentage)
+          this.props.storeResult(response.data.percentage);
 
           // pie update data
-          const newPieLabels = Object.keys(response.data.top_answers)
-          const newPieSeries = []
-          const newPieColors = []
+          const newPieLabels = Object.keys(response.data.top_answers);
+          const newPieSeries = [];
+          const newPieColors = [];
           newPieLabels.map(data => {
-            newPieSeries.push(response.data.top_answers[data])
+            newPieSeries.push(response.data.top_answers[data]);
             if (data === "caregiver") {
-              newPieColors.push("#d53f98")
+              newPieColors.push("#d53f98");
             } else if (data === "creator") {
-              newPieColors.push("#895ba5")
+              newPieColors.push("#895ba5");
             } else if (data === "explorer") {
-              newPieColors.push("#46b4e8")
+              newPieColors.push("#46b4e8");
             } else if (data === "hero") {
-              newPieColors.push("#2f3192")
+              newPieColors.push("#2f3192");
             } else if (data === "innocent") {
-              newPieColors.push("#f2cd46")
+              newPieColors.push("#f2cd46");
             } else if (data === "jester") {
-              newPieColors.push("#b84f9e")
+              newPieColors.push("#b84f9e");
             } else if (data === "lover") {
-              newPieColors.push("#d63f40")
+              newPieColors.push("#d63f40");
             } else if (data === "magician") {
-              newPieColors.push("#eaae42")
+              newPieColors.push("#eaae42");
             } else if (data === "member") {
-              newPieColors.push("#60bb46")
+              newPieColors.push("#60bb46");
             } else if (data === "outlaw") {
-              newPieColors.push("#771818")
+              newPieColors.push("#771818");
             } else if (data === "ruler") {
-              newPieColors.push("#e0c542")
+              newPieColors.push("#e0c542");
             } else if (data === "sage") {
-              newPieColors.push("#49a687")
+              newPieColors.push("#49a687");
             }
-            return true
-          })
+            return true;
+          });
 
           this.setState({
             seriesPie: newPieSeries,
@@ -93,22 +88,22 @@ class DashboardPage extends React.Component {
             },
             chart: true,
             placeholder: false
-          })
+          });
         } catch {
-          this.props.history.push("/login")
+          this.props.history.push("/login");
         }
       }
     }
     // else if (this.props.archetype === '') {
     //   this.props.history.push('/quiz')
     // }
-  }
+  };
 
   componentDidMount = async () => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
 
     if (localStorage.getItem("authToken") === null) {
-      this.props.history.push("/login")
+      this.props.history.push("/login");
     }
     if (this.props.answers.length > 0) {
       try {
@@ -119,61 +114,58 @@ class DashboardPage extends React.Component {
           params: {
             answers: this.props.answers
           }
-        })
+        });
         this.props.updateUser(
           response.data.user.name,
           response.data.user.archetype,
           response.data.user.created_at,
           this.props.token
-        )
-        this.props.storeResult(response.data.percentage)
+        );
+        this.props.storeResult(response.data.percentage);
 
         // pie update data
-        const newPieLabels = Object.keys(response.data.top_answers)
-        const newPieSeries = []
-        const newPieColors = []
+        const newPieLabels = Object.keys(response.data.top_answers);
+        const newPieSeries = [];
+        const newPieColors = [];
         newPieLabels.map(data => {
-          newPieSeries.push(response.data.top_answers[data])
+          newPieSeries.push(response.data.top_answers[data]);
           if (data === "caregiver") {
-            newPieColors.push("#d53f98")
+            newPieColors.push("#d53f98");
           } else if (data === "creator") {
-            newPieColors.push("#895ba5")
+            newPieColors.push("#895ba5");
           } else if (data === "explorer") {
-            newPieColors.push("#46b4e8")
+            newPieColors.push("#46b4e8");
           } else if (data === "hero") {
-            newPieColors.push("#2f3192")
+            newPieColors.push("#2f3192");
           } else if (data === "innocent") {
-            newPieColors.push("#f2cd46")
+            newPieColors.push("#f2cd46");
           } else if (data === "jester") {
-            newPieColors.push("#b84f9e")
+            newPieColors.push("#b84f9e");
           } else if (data === "lover") {
-            newPieColors.push("#d63f40")
+            newPieColors.push("#d63f40");
           } else if (data === "magician") {
-            newPieColors.push("#eaae42")
+            newPieColors.push("#eaae42");
           } else if (data === "member") {
-            newPieColors.push("#60bb46")
+            newPieColors.push("#60bb46");
           } else if (data === "outlaw") {
-            newPieColors.push("#771818")
+            newPieColors.push("#771818");
           } else if (data === "ruler") {
-            newPieColors.push("#e0c542")
+            newPieColors.push("#e0c542");
           } else if (data === "sage") {
-            newPieColors.push("#49a687")
+            newPieColors.push("#49a687");
           }
-          return true
-        })
+          return true;
+        });
 
-        const newBarSeries = Object.keys(response.data.top_answers).reduce(
-          (carry, key) => {
-            return [
-              ...carry,
-              {
-                name: key,
-                data: [response.data.top_answers[key]]
-              }
-            ]
-          },
-          []
-        )
+        const newBarSeries = Object.keys(response.data.top_answers).reduce((carry, key) => {
+          return [
+            ...carry,
+            {
+              name: key,
+              data: [response.data.top_answers[key]]
+            }
+          ];
+        }, []);
 
         this.setState({
           seriesBar: newBarSeries, //update chart
@@ -185,14 +177,11 @@ class DashboardPage extends React.Component {
           },
           chart: true,
           placeholder: false
-        })
+        });
       } catch {
-        this.props.history.push("/login")
+        this.props.history.push("/login");
       }
-    } else if (
-      this.props.archetype.length > 0 &&
-      this.props.answers.length === 0
-    ) {
+    } else if (this.props.archetype.length > 0 && this.props.answers.length === 0) {
       try {
         const response = await twelveType.get("/user/quizResult", {
           headers: {
@@ -201,48 +190,48 @@ class DashboardPage extends React.Component {
           params: {
             answers: this.props.archetype
           }
-        })
+        });
         this.props.updateUser(
           response.data.user.name,
           response.data.user.archetype,
           response.data.user.created_at,
           this.props.token
-        )
-        this.props.storeResult(response.data.percentage)
+        );
+        this.props.storeResult(response.data.percentage);
 
         // pie update data
-        const newPieLabels = Object.keys(response.data.top_answers)
-        const newPieSeries = []
-        const newPieColors = []
+        const newPieLabels = Object.keys(response.data.top_answers);
+        const newPieSeries = [];
+        const newPieColors = [];
         newPieLabels.map(data => {
-          newPieSeries.push(response.data.top_answers[data])
+          newPieSeries.push(response.data.top_answers[data]);
           if (data === "caregiver") {
-            newPieColors.push("#d53f98")
+            newPieColors.push("#d53f98");
           } else if (data === "creator") {
-            newPieColors.push("#895ba5")
+            newPieColors.push("#895ba5");
           } else if (data === "explorer") {
-            newPieColors.push("#46b4e8")
+            newPieColors.push("#46b4e8");
           } else if (data === "hero") {
-            newPieColors.push("#2f3192")
+            newPieColors.push("#2f3192");
           } else if (data === "innocent") {
-            newPieColors.push("#f2cd46")
+            newPieColors.push("#f2cd46");
           } else if (data === "jester") {
-            newPieColors.push("#b84f9e")
+            newPieColors.push("#b84f9e");
           } else if (data === "lover") {
-            newPieColors.push("#d63f40")
+            newPieColors.push("#d63f40");
           } else if (data === "magician") {
-            newPieColors.push("#eaae42")
+            newPieColors.push("#eaae42");
           } else if (data === "member") {
-            newPieColors.push("#60bb46")
+            newPieColors.push("#60bb46");
           } else if (data === "outlaw") {
-            newPieColors.push("#771818")
+            newPieColors.push("#771818");
           } else if (data === "ruler") {
-            newPieColors.push("#e0c542")
+            newPieColors.push("#e0c542");
           } else if (data === "sage") {
-            newPieColors.push("#49a687")
+            newPieColors.push("#49a687");
           }
-          return true
-        })
+          return true;
+        });
 
         this.setState({
           seriesPie: newPieSeries,
@@ -253,63 +242,71 @@ class DashboardPage extends React.Component {
           },
           chart: true,
           placeholder: false
-        })
+        });
       } catch {
-        this.props.history.push("/login")
+        this.props.history.push("/login");
       }
     }
-  }
+  };
 
   // onRetakeQuiz = () => {
   //   this.props.updateUser(this.props.username, "", this.props.token)
   //   this.props.history.push('/quiz')
   // }
   onSignOut = () => {
-    localStorage.removeItem("authToken")
-    this.props.updateUser("", "", "", "")
-    this.props.resetAnswers()
-    this.props.signOut()
-    this.props.history.push("/")
-  }
+    localStorage.removeItem("authToken");
+    this.props.updateUser("", "", "", "");
+    this.props.resetAnswers();
+    this.props.signOut();
+    this.props.history.push("/");
+  };
 
   render() {
     return (
       <div className="ui vertical stripe quote segment">
-        <Divider title={`Here Are Your Results, ${this.props.username}`} />
+        <Divider title={`Here Are Your Results, `} username={this.props.username} />
         <div className="ui stackable grid container">
           {this.state.placeholder ? (
             <PlaceholderDashboard />
           ) : (
             <div className="row">
+              <HeaderPersonalised title="Archetype Personality Summary"></HeaderPersonalised>
               <div className="seven wide column">
-                <Chart
-                  options={this.state.optionsPie}
-                  series={this.state.seriesPie}
-                  type="donut"
-                />
+                <Chart options={this.state.optionsPie} series={this.state.seriesPie} type="donut" />
               </div>
               <div className="nine wide column">
-                <Header as="h2" className="custom">
-                  Archetype Personality Summary
-                </Header>
                 {this.props.result.map(data => {
-                  var archetype = Object.keys(data)[0]
+                  var archetype = Object.keys(data)[0];
                   return (
                     <Container key={archetype}>
-                      <Header as="h2" className={archetype}>
+                      <div className="ui grid">
+                        <div className="four wide column border-right-bottom">
+                          <Image
+                            verticalAlign="middle"
+                            src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${
+                              Object.keys(data)[0]
+                            }.webp`}
+                          />
+                        </div>
+                        <div className="twelve wide column border-bottom">
+                          <Header as="h2" className={archetype}>
+                            <Header.Content>{data[archetype] + " " + archetype}</Header.Content>
+                          </Header>
+                          <p className="text-silver">{data.interpretation.content}</p>
+                        </div>
+                      </div>
+                      {/* <Header as="h2" className={archetype}>
                         <Image
                           src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${
                             Object.keys(data)[0]
                           }.webp`}
                         />
-                        <Header.Content>
-                          {data[archetype] + " " + archetype}
-                        </Header.Content>
+                        <Header.Content>{data[archetype] + " " + archetype}</Header.Content>
                       </Header>
                       <p>{data.interpretation.content}</p>
-                      <br />
+                      <br /> */}
                     </Container>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -318,17 +315,14 @@ class DashboardPage extends React.Component {
             {this.state.placeholder ? (
               ""
             ) : (
-              <Link
-                to="/archetype-details"
-                className="ui huge submit button custom-background-orange"
-              >
+              <Link to="/personalised" className="ui huge submit button custom-background-orange">
                 Learn More About My Archetypes
               </Link>
             )}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -341,16 +335,13 @@ const mapStateToProps = state => {
     token: state.auth.token,
     answers: state.quiz.answers,
     result: state.quiz.result
-  }
-}
+  };
+};
 
-export default connect(
-  mapStateToProps,
-  {
-    updateUser,
-    storeResult,
-    signOut,
-    resetAnswers,
-    signIn
-  }
-)(DashboardPage)
+export default connect(mapStateToProps, {
+  updateUser,
+  storeResult,
+  signOut,
+  resetAnswers,
+  signIn
+})(DashboardPage);

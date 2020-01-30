@@ -1,17 +1,19 @@
-import React from "react"
+import React from "react";
 
 const Divider = props => {
   return (
-    <div className="ui text center aligned container">
-      <h3 className="ui horizontal divider header">{props.title}</h3>
+    <div className="ui container">
+      <h3 className="ui horizontal new-divider">
+        {props.title} <span>{props.username}</span>
+      </h3>
       <p className="text-divider">{props.text}</p>
     </div>
-  )
-}
+  );
+};
 
 Divider.defaultProps = {
   title: "PLEASE SEND ME PROPS :)",
   text: ""
-}
+};
 
-export default Divider
+export default Divider;
