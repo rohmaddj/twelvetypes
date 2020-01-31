@@ -73,7 +73,6 @@ class SalesLetterPage extends React.Component {
           </div>
         ) : (
           <div className="main ui intro container">
-            <hr></hr>
             <div className="row">
               <div className="sixteen wide column">
                 <Image src={top}></Image>

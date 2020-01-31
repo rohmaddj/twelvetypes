@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import twelveType from "../../api/twelveType";
 import Divider from "../child/Divider";
 import { updateUser, storeResult, signOut, signIn, resetAnswers } from "../../actions/index";
-import { Container, Image, Header, Placeholder } from "semantic-ui-react";
+import { Container, Image, Header } from "semantic-ui-react";
 import Chart from "react-apexcharts";
 import { Link } from "react-router-dom";
 import PlaceholderDashboard from "../child/placeholder/PlaceholderDashboard";

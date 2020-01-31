@@ -1185,7 +1185,7 @@ h2.ui.header.custom {
   margin-top: 0;
 }
 .left-line {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #bbb;
   margin-left: 2.2em;
   padding-left: 2.7em;
   margin-bottom: 4em;
@@ -1334,4 +1334,26 @@ p.text-silver {
   display: block;
   position: absolute;
   background-size: contain;
+}
+
+.ui.vertical.stripe h3.text-question {
+  font-size: 1.3em;
+}
+
+.ui.huge.button.rounded-button {
+  background: #ec6563;
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.ui.huge.button.rounded-button:hover {
+  background: #dddddd;
+  color: #ec6563;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
