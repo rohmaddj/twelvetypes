@@ -295,7 +295,7 @@ class DashboardPage extends React.Component {
                             src={`https://api.individualogist.com/img/archetype/logos/${Object.keys(data)[0]}.webp`}
                           />
                         </div>
-                        <div className="twelve wide column border-bottom">
+                        <div className="twelve wide column border-bottom table-desc">
                           <Header as="h2" className={archetype}>
                             <Header.Content>{data[archetype] + " " + archetype}</Header.Content>
                           </Header>

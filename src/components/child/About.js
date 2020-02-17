@@ -8,7 +8,7 @@ const About = props => {
       <Divider title="ABOUT" />
       <div className="ui center aligned stackable grid container">
         <div className="center aligned row">
-          <div className="seven wide column background-orange">
+          <div className="seven wide column text-orange">
             {/* <h3>"Understanding one's character and others around you will give you a wider perception of how you can fully interact and optimize your interpersonal relationship with people. This improves your intuition and good judgement when it comes to dealing with your personal growth and success"</h3> */}
             <p>
               "Understanding one's character and others around you will give you

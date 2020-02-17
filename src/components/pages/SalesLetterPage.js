@@ -36,7 +36,7 @@ class SalesLetterPage extends React.Component {
   render() {
     return (
       <div className="ui vertical stripe quote segment">
-        <Divider title="FREE READING" />
+        <Divider title="Your Next Step Towards Personal Evolution: The Confident, Fulfilling, and Joyful Life Ahead Of You" />
         {this.state.placeholder ? (
           <div className="ui middle aligned stackable grid container">
             <div className="row">
@@ -79,12 +79,11 @@ class SalesLetterPage extends React.Component {
             </div>
             <div className="row">
               <div className="sixteen wide column">
-                <h3 className="ui header">
-                  Your Next Step Towards Personal Evolution: The Confident, Fulfilling, and Joyful Life Ahead Of You
+                <h3 className="ui header centered">
+                  Manifesto of the {this.state.content.s1}
                 </h3>
               </div>
             </div>
-            <p>Manifesto of the {this.state.content.s1}</p>
             <p>
               You’ve experienced the thrill of discovering your personality archetypes; coming face-to-face with the
               intimate reality of your most authentic self.
@@ -118,7 +117,7 @@ class SalesLetterPage extends React.Component {
               evolve and become a happier, wiser, more confident, and more fulfilled version of you.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header">Create Distinctions Between Your Current Identity And Desired Self</h2>
+            <h2 className="ui dividing header centered">Create Distinctions Between Your Current Identity And Desired Self</h2>
             <p>
               There’s much more you wish to achieve, and there’s no telling just how bright and beautiful your future
               can become.
@@ -158,7 +157,7 @@ class SalesLetterPage extends React.Component {
               missing part of ourselves.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header">
+            <h2 className="ui dividing header centered">
               The Lost Piece Of {this.props.username ? this.props.username : "Friend"} You’ve Been Seeking
             </h2>
             <p>{this.state.content.s3}</p>
@@ -174,7 +173,7 @@ class SalesLetterPage extends React.Component {
             <p>Finally becoming at peace with your true self</p>
 
             <Line></Line>
-            <h2 className="ui dividing header">"Easier Said Than Done?" Well, Not Really</h2>
+            <h2 className="ui dividing header centered">"Easier Said Than Done?" Well, Not Really</h2>
             <p>Don't be misled, {this.props.username ? this.props.username : "Friend"}!</p>
             <p>{this.state.content.s4}</p>
             <p>Perhaps even you feel that away about yourself sometimes.</p>
@@ -197,7 +196,7 @@ class SalesLetterPage extends React.Component {
               not have to be difficult in the first place!
             </p>
             <Line></Line>
-            <h2 className="ui dividing header">Self Discovery Simplified</h2>
+            <h2 className="ui dividing header centered">Self Discovery Simplified</h2>
             <p>
               Self discovery sounds pretty daunting - it’s intimate; and opens you up to being vulnerable and exposed.
             </p>
@@ -234,7 +233,7 @@ class SalesLetterPage extends React.Component {
             </p>
 
             <Line></Line>
-            <h2 className="ui dividing header">There Is A Path For Your Next Evolution</h2>
+            <h2 className="ui dividing header centered">There Is A Path For Your Next Evolution</h2>
 
             <p>
               Every single respectable, purposeful, and successful individual to walk the face of the earth (regardless
@@ -250,7 +249,7 @@ class SalesLetterPage extends React.Component {
             <p>You can evolve into the greatest {this.state.content.archetype} the world has ever seen!</p>
             <p>And it all begins with making a defining choice.</p>
             <Line></Line>
-            <h2 className="ui dividing header">There Is A Path To A Concrete Purpose</h2>
+            <h2 className="ui dividing header centered">There Is A Path To A Concrete Purpose</h2>
 
             <p>
               Humans are fickle beings - our why’s shift along with our moods, and that definite purpose we were so sure
@@ -265,7 +264,7 @@ class SalesLetterPage extends React.Component {
               will keep you laser-focused, leading you to the goals and successes of your wildest dreams.
             </p>
             <p>Gone will be the days of uncertainty, idleness, and watching the years simply pass you by.</p>
-            <h2 className="ui dividing header">There Is A Path To Limitless Growth</h2>
+            <h2 className="ui dividing header centered">There Is A Path To Limitless Growth</h2>
             <p>
               Discover how you can leverage on your {this.state.content.archetype}’s hidden talents and personality
               traits to continuously blossom, and strike off your most desired goals and achievements.
@@ -280,7 +279,7 @@ class SalesLetterPage extends React.Component {
               way.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header">There Is A Path To Picture-Perfect Love</h2>
+            <h2 className="ui dividing header centered">There Is A Path To Picture-Perfect Love</h2>
             <p>
               The stronger your relationship with yourself, the more fulfilling and powerful your relationships will be
               with others.
@@ -295,7 +294,7 @@ class SalesLetterPage extends React.Component {
             </p>
             <p>This is experiencing love and relationships at a completely different level of intimacy.</p>
             <Line></Line>
-            <h2 className="ui dividing header">
+            <h2 className="ui dividing header centered">
               Take The First Step To Becoming The Best {this.state.content.archetype} The World Has Ever Seen
             </h2>
             <p>If you’re ready to be inspired… </p>
@@ -312,7 +311,7 @@ class SalesLetterPage extends React.Component {
               self-seekers like you to attain the goals and ambitions of your utmost desires:
             </p>
             <Line></Line>
-            <h2 className="ui dividing header">Introducing: Your Personalized Premium Archetype Profile</h2>
+            <h2 className="ui dividing header centered">Introducing: Your Personalized Premium Archetype Profile</h2>
             <p>
               Whether you’re searching for more insights about who you are, or why you’re here, this powerful
               personality report reveals everything you need to know about being a {this.state.content.archetype}.
@@ -332,7 +331,7 @@ class SalesLetterPage extends React.Component {
               self-discovery; one that’s going to help you fully embrace who you truly are.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header">You’ve just dipped your toes… Now get ready to take the plunge!</h2>
+            <h2 className="ui dividing header centered">You’ve just dipped your toes… Now get ready to take the plunge!</h2>
             <p>
               The free archetype results you’ve just seen is merely a fraction of the personalised insights and wisdom
               that you can gain immediate access to!
@@ -387,7 +386,7 @@ class SalesLetterPage extends React.Component {
               </div>
             </div>
             <Line></Line>
-            <h2 className="ui dividing header">
+            <h2 className="ui dividing header centered">
               Gain Immediate Access To Your Premium Archetype Profile For Just $27.
             </h2>
             <p>
@@ -411,7 +410,7 @@ class SalesLetterPage extends React.Component {
             </p>
             <p>…At a VERY affordable price.</p>
             <Line></Line>
-            <h2 className="ui dividing header">Call us crazy, offbeat, or just super strange</h2>
+            <h2 className="ui dividing header centered">Call us crazy, offbeat, or just super strange</h2>
             <p>
               But we LOVE seeing people happy, successful, and living their best lives. Life is, after all, a journey -
               not a competition.
@@ -430,7 +429,7 @@ class SalesLetterPage extends React.Component {
               because in the last 6 months, LESS than 5% of the TwelveTypes faction have asked for their money back.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header">What would it take to see a grand, enormous change in your life?</h2>
+            <h2 className="ui dividing header centered">What would it take to see a grand, enormous change in your life?</h2>
             <p>If all this did was create that spark you needed to wholly accept the truth about who you are…</p>
             <p>Or give you the courage and certainty to trust your instincts when making astronomical decisions…</p>
             <p>
@@ -451,7 +450,7 @@ class SalesLetterPage extends React.Component {
                 href="http://twelvetypes-test.individua1.pay.clickbank.net/"
                 className="ui huge submit button custom-background-orange"
               >
-                Purchase
+                Upgrade To Premium
               </a>
             </div>
           </div>

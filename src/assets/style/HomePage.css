@@ -98,10 +98,15 @@ body {
 .ui.inverted.segment.linear-background {
   background:  linear-gradient(to bottom, #ec6563 60%, #ffffff 0%);
 }
+.text-orange {
+  color: #ec6563;
+  margin-top:3em!important;
+}
 .background-orange {
   background: #ec6563;
   color: #ffffff;
   border-radius: 15px;
+  padding:1em !important;
 }
 .background-toska {
   background: #52beb2;
@@ -157,10 +162,13 @@ body {
   background: #857a56;
   color: #ffffff;
 }
+.content.inside.background {
+  min-height:308px;
+}
 .content.inside.background img {
   max-width: 250px;
   padding: 2em;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 .quote.stripe.segment .grid .column.background-orange.form {
   padding: 5em;
@@ -187,7 +195,10 @@ body {
 .ui.button {
   background: #52beb2;
   color: #ffffff;
-  border-radius: 10px;
+  border-radius: 50px;
+}
+.ui.secondary.menu .item{
+  border-radius:50px;
 }
 .ui.button.login {
   background: #ffffff;
@@ -239,6 +250,7 @@ body {
 }
 .text-divider {
   padding-bottom: 2em;
+  text-align: center;
 }
 .ui.form .field>label {
   color: #ffffff;
@@ -305,7 +317,69 @@ body {
 .next { right: 1em; }
 .prev { left: 1em; }
 
+.ui.list>a.item {
+    color:#ec6563
+}
+.ui.list>a.item:hover{
+    transition:.4s;
+    -webkit-transition:.4s;
+    color:#52beb2
+}
+.background-toska h3, .background-toska p {
+    color:#fff
+}
+.qn-opt {
+    font-size:1em !important;
+    width:90%
+}
+.ui.basic.red.label {
+    background: #db2828 !important;
+    color: #fff !important;
+    border-color: #db2828!important;
+}
+.ui[class*="pointing below"].label {
+    margin-top: 0;
+    margin-bottom: 1em;
+    position: absolute;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    top: -27px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+}
 @media only screen and (max-width: 700px) {
+    .inputGroup label{
+        padding:12px !important;
+        border-radius:5px!important;
+    }
+    .qn-opt{
+        margin-bottom:1em!important;
+        width:100%!important;
+        padding-bottom:1em!important;
+        text-align:center!important;
+    }
+    .inputGroup .order-number {
+        right: 0!important;
+        left: 0!important;
+        width:25px!important;
+        height:25px !important;
+        top:auto !important;
+        bottom: 0!important;
+        margin: auto!important;
+    }
+    .inputGroup label:after {
+        width:25px !important;
+        height:25px !important;
+        right: 0!important;
+        top: auto !important;
+        left: 0!important;
+        bottom: 0!important;
+        margin: auto!important;
+    }
+  h2.ui.header{
+    text-align:center;
+  }
   .ui.vertical.stripe .horizontal.divider {
     margin-top: 3em;
   }
@@ -325,6 +399,16 @@ body {
   .ui.vertical.stripe{
     padding-bottom: 10px;
   }
+  .ui.vertical.stripe p {
+    font-size:1.1em;
+  }
+  .left-line {
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }    
   .ui.fixed.menu {
     display: none !important;
   }
@@ -348,7 +432,7 @@ body {
     font-size: 1.5em;
   }
   .ui.vertical.stripe h3 {
-    font-size: 1.7em;
+    font-size: 1em;
   }
   .content.inside.background img {
     margin: 170px 0;
@@ -370,6 +454,12 @@ body {
     top: 400px;
     /* box-shadow: 0 1px 0 #999; */
   }
+    .ui.horizontal.new-divider:before{
+        display:none!important;
+    }
+    .ui.horizontal.new-divider:after{
+        display:none!important;
+    }
 }
 
 .test-questions.comp{
@@ -1162,9 +1252,19 @@ h2.sage .content {
 }
 .ui.button.custom-background-orange {
   background: #ec6562;
+  text-transform:uppercase;
+  font-size:2em!important;
+  border-radius:50px!important;
+  display:block!important;
+  position:relative!important;
+  max-width:500px !important;    
+  margin:0 auto;
 }
 .ui.button.custom-background-orange:hover {
-  background: #c9c5c5;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background: #52beb2;
+  color:#fff;
 }
 .ui.centered.column.row.remove-padding {
   padding: 0
@@ -1205,6 +1305,7 @@ h3.ui.header span {
 }
 h3.ui.header.black {
   color: black;
+  text-align:center;
 }
 .quote.stripe.segment .grid .column {
   padding: 2em 1em;
@@ -1223,7 +1324,7 @@ p.personalised {
 }
 span.bold {
   font-weight: bold;
-  font-size: 20px;
+  font-size: inherit;
 }
 .ui.dividing.header {
   font-family: 'Montserrat', sans-serif;
@@ -1288,10 +1389,17 @@ p.text-silver {
 }
 .border-right-bottom .ui.image {
   max-width: 100px;
-  margin-top: 10px;
+  margin-top: 50px;
+  width:100%;
 }
 .border-bottom {
   border-bottom: 1px solid #dddd;
+}
+.table-desc{
+    padding: 1em!important;
+}
+.table-desc p {
+    font-size:1.1em!important;
 }
 
 .line-image {
@@ -1314,7 +1422,7 @@ p.text-silver {
   width: 100px;
   height: 100px;
   position: absolute;
-  left: calc(0% - 2em);
+  left: calc(0% - 3em);
   top: calc(0% - 3em);
   bottom: 0;
   margin: auto;
@@ -1326,7 +1434,7 @@ p.text-silver {
   content: '';
   background-repeat: no-repeat;
   width: 100px;
-  right: calc(0% - 2em);
+  right: calc(0% - 3em);
   top: 0;
   bottom: calc(0% - 3em);
   margin: auto;
@@ -1335,6 +1443,7 @@ p.text-silver {
   position: absolute;
   background-size: contain;
 }
+
 
 .ui.vertical.stripe h3.text-question {
   font-size: 1.3em;

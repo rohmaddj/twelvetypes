@@ -60,7 +60,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_a.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_a">{question.answer_a.content}</label>
+                  <label htmlFor="option_a"><p className="qn-opt">{question.answer_a.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -77,7 +77,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_b.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_b">{question.answer_b.content}</label>
+                  <label htmlFor="option_b"><p className="qn-opt">{question.answer_b.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -94,7 +94,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_c.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_c">{question.answer_c.content}</label>
+                  <label htmlFor="option_c"><p className="qn-opt">{question.answer_c.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -111,7 +111,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_d.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_d">{question.answer_d.content}</label>
+                  <label htmlFor="option_d"><p className="qn-opt">{question.answer_d.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -128,7 +128,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_e.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_e">{question.answer_e.content}</label>
+                  <label htmlFor="option_e"><p className="qn-opt">{question.answer_e.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -145,7 +145,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_f.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_f">{question.answer_f.content}</label>
+                  <label htmlFor="option_f"><p className="qn-opt">{question.answer_f.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -162,7 +162,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_g.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_g">{question.answer_g.content}</label>
+                  <label htmlFor="option_g"><p className="qn-opt">{question.answer_g.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -179,7 +179,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_h.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_h">{question.answer_h.content}</label>
+                  <label htmlFor="option_h"><p className="qn-opt">{question.answer_h.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -196,7 +196,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_i.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_i">{question.answer_i.content}</label>
+                  <label htmlFor="option_i"><p className="qn-opt">{question.answer_i.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -213,7 +213,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_j.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_j">{question.answer_j.content}</label>
+                  <label htmlFor="option_j"><p className="qn-opt">{question.answer_j.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -230,7 +230,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_k.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_k">{question.answer_k.content}</label>
+                  <label htmlFor="option_k"><p className="qn-opt">{question.answer_k.content}</p></label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -247,7 +247,7 @@ class ListQuiz extends React.Component {
                       ? this.props.temp.indexOf(question.answer_l.archetype) + 1
                       : ""}
                   </div>
-                  <label htmlFor="option_l">{question.answer_l.content}</label>
+                  <label htmlFor="option_l"><p className="qn-opt">{question.answer_l.content}</p></label>
                 </div>
               </Grid.Column>
             </Grid.Row>
