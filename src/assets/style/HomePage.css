@@ -24,7 +24,7 @@ body {
   position: absolute;
   z-index: -1;
 }
-.column.outlaw::after {
+.column.rebel::after {
   background-image: url("https://api.individualogist.com/img/archetype/OutlawC.jpg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -121,11 +121,11 @@ body {
   background: #2c3135;
   color: #ffffff;
 }
-.hero-card {
+.warrior-card {
   background: #1c3f4a;
   color: #ffffff;
 }
-.innocent-card {
+.idealist-card {
   background: #a88710;
   color: #ffffff;
 }
@@ -141,11 +141,11 @@ body {
   background: #283155;
   color: #ffffff;
 }
-.member-card {
+.everyman-card {
   background: #796e7e;
   color: #ffffff;
 }
-.outlaw-card {
+.rebel-card {
   background: #5e5131;
   color: #ffffff;
 }
@@ -1126,10 +1126,10 @@ h2.creator .content {
 h2.explorer .content {
   color: #46b4e8
 }
-h2.hero .content {
+h2.warrior .content {
   color: #2f3192
 }
-h2.innocent .content {
+h2.idealist .content {
   color: #f2cd46
 }
 h2.jester .content {
@@ -1141,10 +1141,10 @@ h2.lover .content {
 h2.magician .content {
   color: #eaae42
 }
-h2.member .content {
+h2.everyman .content {
   color: #60bb46
 }
-h2.outlaw .content {
+h2.rebel .content {
   color: #771818
 }
 h2.ruler .content {

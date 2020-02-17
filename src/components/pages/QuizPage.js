@@ -69,7 +69,7 @@ class QuizPage extends React.Component {
       placeholder: false
     }));
 
-    if (id > 4) {
+    if (id > 10) {
       this.props.history.push("/register");
     }
   };

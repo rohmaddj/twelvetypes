@@ -52,9 +52,7 @@ class PersonalisedPage extends React.Component {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
-            <Image
-              src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${archetype.archetype}.webp`}
-            />
+            <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
@@ -125,9 +123,7 @@ class PersonalisedPage extends React.Component {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
-            <Image
-              src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${archetype.archetype}.webp`}
-            />
+            <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
@@ -144,9 +140,7 @@ class PersonalisedPage extends React.Component {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
-            <Image
-              src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${archetype.archetype}.webp`}
-            />
+            <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
@@ -161,9 +155,7 @@ class PersonalisedPage extends React.Component {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
-            <Image
-              src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${archetype.archetype}.webp`}
-            />
+            <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
@@ -178,9 +170,7 @@ class PersonalisedPage extends React.Component {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
-            <Image
-              src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${archetype.archetype}.webp`}
-            />
+            <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
@@ -195,9 +185,7 @@ class PersonalisedPage extends React.Component {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
-            <Image
-              src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${archetype.archetype}.webp`}
-            />
+            <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
@@ -317,7 +305,7 @@ class PersonalisedPage extends React.Component {
               self.
             </p>
             <div className="ui centered column row remove-padding">
-              <Link to="/archetype-details" className="ui huge submit button custom-background-orange">
+              <Link to="/offer" className="ui huge submit button custom-background-orange">
                 Continue
               </Link>
             </div>

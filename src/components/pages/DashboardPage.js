@@ -50,31 +50,33 @@ class DashboardPage extends React.Component {
           const newPieSeries = [];
           const newPieColors = [];
           newPieLabels.map(data => {
-            newPieSeries.push(response.data.top_answers[data]);
-            if (data === "caregiver") {
-              newPieColors.push("#d53f98");
-            } else if (data === "creator") {
-              newPieColors.push("#895ba5");
-            } else if (data === "explorer") {
-              newPieColors.push("#46b4e8");
-            } else if (data === "hero") {
-              newPieColors.push("#2f3192");
-            } else if (data === "innocent") {
-              newPieColors.push("#f2cd46");
-            } else if (data === "jester") {
-              newPieColors.push("#b84f9e");
-            } else if (data === "lover") {
-              newPieColors.push("#d63f40");
-            } else if (data === "magician") {
-              newPieColors.push("#eaae42");
-            } else if (data === "member") {
-              newPieColors.push("#60bb46");
-            } else if (data === "outlaw") {
-              newPieColors.push("#771818");
-            } else if (data === "ruler") {
-              newPieColors.push("#e0c542");
-            } else if (data === "sage") {
-              newPieColors.push("#49a687");
+            if (response.data.top_answers[data] !== 0) {
+              newPieSeries.push(response.data.top_answers[data]);
+              if (data === "caregiver") {
+                newPieColors.push("#d53f98");
+              } else if (data === "creator") {
+                newPieColors.push("#895ba5");
+              } else if (data === "explorer") {
+                newPieColors.push("#46b4e8");
+              } else if (data === "warrior") {
+                newPieColors.push("#2f3192");
+              } else if (data === "idealist") {
+                newPieColors.push("#f2cd46");
+              } else if (data === "jester") {
+                newPieColors.push("#b84f9e");
+              } else if (data === "lover") {
+                newPieColors.push("#d63f40");
+              } else if (data === "magician") {
+                newPieColors.push("#eaae42");
+              } else if (data === "everyman") {
+                newPieColors.push("#60bb46");
+              } else if (data === "rebel") {
+                newPieColors.push("#771818");
+              } else if (data === "ruler") {
+                newPieColors.push("#e0c542");
+              } else if (data === "sage") {
+                newPieColors.push("#49a687");
+              }
             }
             return true;
           });
@@ -119,7 +121,8 @@ class DashboardPage extends React.Component {
           response.data.user.name,
           response.data.user.archetype,
           response.data.user.created_at,
-          this.props.token
+          this.props.token,
+          response.data.user.email
         );
         this.props.storeResult(response.data.percentage);
 
@@ -128,31 +131,33 @@ class DashboardPage extends React.Component {
         const newPieSeries = [];
         const newPieColors = [];
         newPieLabels.map(data => {
-          newPieSeries.push(response.data.top_answers[data]);
-          if (data === "caregiver") {
-            newPieColors.push("#d53f98");
-          } else if (data === "creator") {
-            newPieColors.push("#895ba5");
-          } else if (data === "explorer") {
-            newPieColors.push("#46b4e8");
-          } else if (data === "hero") {
-            newPieColors.push("#2f3192");
-          } else if (data === "innocent") {
-            newPieColors.push("#f2cd46");
-          } else if (data === "jester") {
-            newPieColors.push("#b84f9e");
-          } else if (data === "lover") {
-            newPieColors.push("#d63f40");
-          } else if (data === "magician") {
-            newPieColors.push("#eaae42");
-          } else if (data === "member") {
-            newPieColors.push("#60bb46");
-          } else if (data === "outlaw") {
-            newPieColors.push("#771818");
-          } else if (data === "ruler") {
-            newPieColors.push("#e0c542");
-          } else if (data === "sage") {
-            newPieColors.push("#49a687");
+          if (response.data.top_answers[data] !== 0) {
+            newPieSeries.push(response.data.top_answers[data]);
+            if (data === "caregiver") {
+              newPieColors.push("#d53f98");
+            } else if (data === "creator") {
+              newPieColors.push("#895ba5");
+            } else if (data === "explorer") {
+              newPieColors.push("#46b4e8");
+            } else if (data === "warrior") {
+              newPieColors.push("#2f3192");
+            } else if (data === "idealist") {
+              newPieColors.push("#f2cd46");
+            } else if (data === "jester") {
+              newPieColors.push("#b84f9e");
+            } else if (data === "lover") {
+              newPieColors.push("#d63f40");
+            } else if (data === "magician") {
+              newPieColors.push("#eaae42");
+            } else if (data === "everyman") {
+              newPieColors.push("#60bb46");
+            } else if (data === "rebel") {
+              newPieColors.push("#771818");
+            } else if (data === "ruler") {
+              newPieColors.push("#e0c542");
+            } else if (data === "sage") {
+              newPieColors.push("#49a687");
+            }
           }
           return true;
         });
@@ -191,11 +196,13 @@ class DashboardPage extends React.Component {
             answers: this.props.archetype
           }
         });
+        console.log(response);
         this.props.updateUser(
           response.data.user.name,
           response.data.user.archetype,
           response.data.user.created_at,
-          this.props.token
+          this.props.token,
+          response.data.user.email
         );
         this.props.storeResult(response.data.percentage);
 
@@ -204,31 +211,33 @@ class DashboardPage extends React.Component {
         const newPieSeries = [];
         const newPieColors = [];
         newPieLabels.map(data => {
-          newPieSeries.push(response.data.top_answers[data]);
-          if (data === "caregiver") {
-            newPieColors.push("#d53f98");
-          } else if (data === "creator") {
-            newPieColors.push("#895ba5");
-          } else if (data === "explorer") {
-            newPieColors.push("#46b4e8");
-          } else if (data === "hero") {
-            newPieColors.push("#2f3192");
-          } else if (data === "innocent") {
-            newPieColors.push("#f2cd46");
-          } else if (data === "jester") {
-            newPieColors.push("#b84f9e");
-          } else if (data === "lover") {
-            newPieColors.push("#d63f40");
-          } else if (data === "magician") {
-            newPieColors.push("#eaae42");
-          } else if (data === "member") {
-            newPieColors.push("#60bb46");
-          } else if (data === "outlaw") {
-            newPieColors.push("#771818");
-          } else if (data === "ruler") {
-            newPieColors.push("#e0c542");
-          } else if (data === "sage") {
-            newPieColors.push("#49a687");
+          if (response.data.top_answers[data] !== 0) {
+            newPieSeries.push(response.data.top_answers[data]);
+            if (data === "caregiver") {
+              newPieColors.push("#d53f98");
+            } else if (data === "creator") {
+              newPieColors.push("#895ba5");
+            } else if (data === "explorer") {
+              newPieColors.push("#46b4e8");
+            } else if (data === "warrior") {
+              newPieColors.push("#2f3192");
+            } else if (data === "idealist") {
+              newPieColors.push("#f2cd46");
+            } else if (data === "jester") {
+              newPieColors.push("#b84f9e");
+            } else if (data === "lover") {
+              newPieColors.push("#d63f40");
+            } else if (data === "magician") {
+              newPieColors.push("#eaae42");
+            } else if (data === "everyman") {
+              newPieColors.push("#60bb46");
+            } else if (data === "rebel") {
+              newPieColors.push("#771818");
+            } else if (data === "ruler") {
+              newPieColors.push("#e0c542");
+            } else if (data === "sage") {
+              newPieColors.push("#49a687");
+            }
           }
           return true;
         });
@@ -283,9 +292,7 @@ class DashboardPage extends React.Component {
                         <div className="four wide column border-right-bottom">
                           <Image
                             verticalAlign="middle"
-                            src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${
-                              Object.keys(data)[0]
-                            }.webp`}
+                            src={`https://api.individualogist.com/img/archetype/logos/${Object.keys(data)[0]}.webp`}
                           />
                         </div>
                         <div className="twelve wide column border-bottom">

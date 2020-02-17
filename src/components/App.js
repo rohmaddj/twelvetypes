@@ -17,6 +17,7 @@ import DemoResultPage from "./pages/DemoResultPage";
 import { PrivateRoute } from "./child/PrivateRoute";
 import PersonalisedPage from "./pages/PersonalisedPage";
 import SalesLetterPage from "./pages/SalesLetterPage";
+import MemberPage from "./pages/MemberPage";
 class App extends React.Component {
   render() {
     return (
@@ -35,6 +36,7 @@ class App extends React.Component {
           <Route exact path="/personalised" component={PersonalisedPage} />
           <Route exact path="/offer" component={SalesLetterPage} />
 
+          <PrivateRoute path="/member" component={MemberPage} />
           <PrivateRoute path="/dashboard" component={DashboardPage} />
           <Footer />
         </BrowserRouter>

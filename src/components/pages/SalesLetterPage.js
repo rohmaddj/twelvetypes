@@ -1,12 +1,13 @@
 import React from "react";
 import twelveTypes from "../../api/twelveType";
-import { Placeholder, Image } from "semantic-ui-react";
+import { Placeholder } from "semantic-ui-react";
 import Divider from "../child/Divider";
 import { connect } from "react-redux";
 import Line from "../child/freereading/Line";
+import { Link } from "react-router-dom";
 
 // images
-import top from "../../assets/images/free-reading/top.png";
+// import top from "../../assets/images/free-reading/top.png";
 
 class SalesLetterPage extends React.Component {
   state = { placeholder: true, content: "" };
@@ -19,7 +20,7 @@ class SalesLetterPage extends React.Component {
           Authorization: "Bearer " + this.props.token
         },
         params: {
-          archetype: params.get("archetype") ? params.get("archetype") : "caregiver"
+          archetype: this.props.personalised[0] !== undefined ? this.props.personalised[0].archetype : "caregiver"
         }
       });
       this.setState({
@@ -74,9 +75,7 @@ class SalesLetterPage extends React.Component {
         ) : (
           <div className="main ui intro container">
             <div className="row">
-              <div className="sixteen wide column">
-                <Image src={top}></Image>
-              </div>
+              <div className="sixteen wide column">{/* <Image src={top}></Image> */}</div>
             </div>
             <div className="row">
               <div className="sixteen wide column">
@@ -447,6 +446,14 @@ class SalesLetterPage extends React.Component {
               If this manifesto resonates with you, kindred spirit, then I look forward to welcoming you to our
               TwelveTypes faction!
             </p>
+            <div className="ui centered column row remove-padding">
+              <a
+                href="http://twelvetypes-test.individua1.pay.clickbank.net/"
+                className="ui huge submit button custom-background-orange"
+              >
+                Purchase
+              </a>
+            </div>
           </div>
         )}
       </div>

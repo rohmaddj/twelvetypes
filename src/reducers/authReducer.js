@@ -3,8 +3,9 @@ const INITIAL_STATE = {
   username: "",
   archetype: "",
   token: "",
-  register: ""
-}
+  register: "",
+  email: ""
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -15,19 +16,21 @@ export default (state = INITIAL_STATE, action) => {
         username: action.username,
         archetype: action.archetype,
         register: action.register,
-        token: action.token
-      }
+        token: action.token,
+        email: action.email
+      };
     case "SIGN_OUT":
-      return { ...state, isSignedIn: false }
+      return { ...state, isSignedIn: false };
     case "UPDATE_USER":
       return {
         ...state,
         username: action.username,
         archetype: action.archetype,
         register: action.register,
-        token: action.token
-      }
+        token: action.token,
+        email: action.email
+      };
     default:
-      return state
+      return state;
   }
-}
+};
