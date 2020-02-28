@@ -324,7 +324,7 @@ class DashboardPage extends React.Component {
               ""
             ) : (
               <Link to="/personalised" className="ui huge submit button custom-background-orange">
-                Learn More About My Archetypes
+                Continue
               </Link>
             )}
           </div>

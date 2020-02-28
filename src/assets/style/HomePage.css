@@ -252,7 +252,7 @@ body {
   border-radius: 50px;
 }
 .ui.button.white:hover,.ui.button:hover{
-    background: #ed6463;
+    background: #52beb2 !important;
     box-shadow: 0 5px 15px rgba(0,0,0,.15);
     color: #fff;
     transition:.4s;
@@ -1350,6 +1350,11 @@ h2.sage .content {
   position:relative!important;
   max-width:500px !important;    
   margin:1em auto;
+}
+.ui.button.custom-background-orange:after {
+    font-family: Icons;
+    content: "\f152";
+    padding-left: 10px;
 }
 .ui.button.custom-background-orange:hover {
   -webkit-transition: 0.4s;
