@@ -28,12 +28,12 @@ const LoginForm = props => {
           </div>
         </div>
         {props.message === "fail" ? (
-          <div className="ui red message">Password/Email doesn't match</div>
+          <div className="ui red message">Password and email do not match</div>
         ) : (
           ""
         )}
         {props.message === "success" ? (
-          <div className="ui green message">Login Successfully</div>
+          <div className="ui green message">Success</div>
         ) : (
           ""
         )}

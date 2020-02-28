@@ -7,7 +7,7 @@ const Divider = props => {
         {props.title} <span>{props.username}</span>
       </h3>
       <p className="text-divider">{props.text}</p>
-      <hr></hr>
+      <div className="line-divider"></div>
     </div>
   );
 };

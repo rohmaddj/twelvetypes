@@ -278,24 +278,25 @@ class DashboardPage extends React.Component {
           {this.state.placeholder ? (
             <PlaceholderDashboard />
           ) : (
-            <div className="row">
-              <HeaderPersonalised title="Archetype Personality Summary"></HeaderPersonalised>
+            <div className="row align-vcenter">
+              
               <div className="seven wide column">
+                <div className="logo-overlay"></div>
                 <Chart options={this.state.optionsPie} series={this.state.seriesPie} type="donut" />
               </div>
-              <div className="nine wide column">
+              <div className="nine wide column archetype-table">
                 {this.props.result.map(data => {
                   var archetype = Object.keys(data)[0];
                   return (
                     <Container key={archetype}>
                       <div className="ui grid">
-                        <div className="four wide column border-right-bottom">
+                        <div className="three wide column m-auto">
                           <Image
                             verticalAlign="middle"
                             src={`https://api.individualogist.com/img/archetype/logos/${Object.keys(data)[0]}.webp`}
                           />
                         </div>
-                        <div className="twelve wide column border-bottom table-desc">
+                        <div className="twelve wide column table-desc m-auto">
                           <Header as="h2" className={archetype}>
                             <Header.Content>{data[archetype] + " " + archetype}</Header.Content>
                           </Header>

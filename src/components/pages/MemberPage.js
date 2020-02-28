@@ -99,7 +99,7 @@ class MemberArea extends Component {
 
     return (
       <div className="ui vertical stripe quote segment">
-        <Divider title={`Welcom to your Library, `} username={this.props.username} />
+        <Divider title={`Welcome to your Library, `} username={this.props.username} />
         <div className="ui stackable grid container">
           <div className="row">
             <div className="sixteen wide column">

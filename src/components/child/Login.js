@@ -70,13 +70,13 @@ class Login extends React.Component {
         <div className="ui center aligned stackable grid container">
           <div className="row">
             <div className="seven wide column">
-              <h3 className="ui header">Take a free quiz first?</h3>
+              <h3 className="ui header">Have you taken the archetype test?</h3>
               <p>
                 Find out which archetype you are and discover more surprising things that you never knew about yourself,
-                take our free archetypal assessment quiz!
+                take our free archetype test!
               </p>
               <Link className="ui huge button" to="/quiz">
-                TAKE THE QUIZ <i className="caret square right icon"></i>
+                TAKE THE TEST <i className="caret square right icon"></i>
               </Link>
             </div>
             <LoginForm

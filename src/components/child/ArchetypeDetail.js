@@ -40,7 +40,7 @@ class ArchetypeDetail extends React.Component {
   render() {
     return (
       <div>
-        <Divider title="ARCHETYPE" />
+        <Divider title="Archetypes" />
         <div className="ui middle aligned stackable grid container">
           <div className="ui buttons">
             <button

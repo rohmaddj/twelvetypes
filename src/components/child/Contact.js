@@ -6,8 +6,7 @@ const Contact = () => {
     <div className="ui vertical stripe quote segment">
       <Divider
         title="CONTACT US"
-        text="Remember that we are always here to answer any questions with regard to your archetype test or if you prefer a deeper insight with regard to our articles and news letters, email us at contact@twelvetypes.com. We are very enthusiastic in hearing your stories because the more we learn about people, the more we strive to make ourselves better and this gives us a chance to guide them towards a better life for them in return.
-"
+        text="Need some help? Just email us at contact@twelvetypes.com or complete the form below! We are very enthusiastic in hearing your questions. The more we learn about people, the more we strive to be better."
       />
       <div className="ui center aligned stackable grid container">
         <div className="center aligned row">
@@ -16,14 +15,14 @@ const Contact = () => {
               <div className="field">
                 <label>Name:</label>
                 <div className="ui left icon input">
-                  <input type="text" placeholder="your name" />
+                  <input type="text" placeholder="Name" />
                   <i className="user icon"></i>
                 </div>
               </div>
               <div className="field">
                 <label>Email:</label>
                 <div className="ui left icon input">
-                  <input type="email" placeholder="your@mail.com" />
+                  <input type="email" placeholder="Email" />
                   <i className="envelope icon"></i>
                 </div>
               </div>

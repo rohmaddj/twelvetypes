@@ -1,3 +1,15 @@
+.question-hint {
+    font-size: 1em !important;
+    color: #52beb2;
+    opacity: .8;
+    padding: .5em;
+    border: 1px solid #52beb2;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+}
 .inputGroup {
   background-color: #fff;
   display: block;
@@ -17,6 +29,11 @@
   -webkit-transition: color 200ms ease-in;
   transition: color 200ms ease-in;
   overflow: hidden;
+}
+.inputGroup label:hover {
+    background: #52beb2;
+    color: #fff;
+    transition: .4s;
 }
 .inputGroup label:before {
   border-radius: 50px;
@@ -60,7 +77,7 @@
 }
 .inputGroup input:checked ~ label:before {
   -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
-          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  transform: translate(-50%, -50%) scale3d(56, 56, 1);
   opacity: 1;
 }
 .inputGroup input:checked ~ label:after {
@@ -110,7 +127,7 @@ code {
   z-index: 4;
   position: absolute;
   right: 30px;
-  top: 62%;
+  top: 60%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
@@ -120,4 +137,7 @@ code {
 
 .ui.grid {
   margin-bottom: 2em;
+}
+.ui.progress{
+    margin: 0 auto!important;
 }

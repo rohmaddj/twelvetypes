@@ -7,6 +7,11 @@ import Line from "../child/freereading/Line";
 import { Link } from "react-router-dom";
 
 // images
+import meadow from "../../assets/images/free-reading/meadow.svg";
+import valley from "../../assets/images/free-reading/valley.svg";
+import road from "../../assets/images/free-reading/road.svg";
+import love from "../../assets/images/free-reading/love.png";
+import cover from "../../assets/images/covers/Cover_Caregiver.png";
 // import top from "../../assets/images/free-reading/top.png";
 
 class SalesLetterPage extends React.Component {
@@ -73,13 +78,13 @@ class SalesLetterPage extends React.Component {
             </div>
           </div>
         ) : (
-          <div className="main ui intro container">
+          <div className="main ui intro sales-letter">
             <div className="row">
               <div className="sixteen wide column">{/* <Image src={top}></Image> */}</div>
             </div>
             <div className="row">
               <div className="sixteen wide column">
-                <h3 className="ui header centered">
+                <h3 className="ui dividing header centered">
                   Manifesto of the {this.state.content.s1}
                 </h3>
               </div>
@@ -158,7 +163,7 @@ class SalesLetterPage extends React.Component {
             </p>
             <Line></Line>
             <h2 className="ui dividing header centered">
-              The Lost Piece Of {this.props.username ? this.props.username : "Friend"} You’ve Been Seeking
+              The Lost Piece Of {this.props.username ? this.props.username : "Your Identity"} You’ve Been Seeking
             </h2>
             <p>{this.state.content.s3}</p>
             <p>
@@ -166,11 +171,23 @@ class SalesLetterPage extends React.Component {
               of transformation would occur if you used this discovery to guide your decisions, actions, and emotions?
             </p>
             <p>Perhaps you’d…</p>
-            <p>Experience the full depths of your relationships with others</p>
-            <p>Find yourself saying “Yes” a lot more</p>
-            <p>Uncover that courage you needed to pursue your passions</p>
-            <p>Rapidly expand your network through genuine connections</p>
-            <p>Finally becoming at peace with your true self</p>
+            <div className="ui large bulleted list">
+                <div className="bolt">
+                    Experience the full depths of your relationships with others
+                </div>
+                <div className="bolt">
+                    Find yourself saying “Yes” a lot more
+                </div>
+                <div className="bolt">
+                    Uncover that courage you needed to pursue your passions
+                </div>
+                <div className="bolt">
+                    Rapidly expand your network through genuine connections
+                </div>
+                <div className="bolt">
+                    Finally becoming at peace with your true self
+                </div>
+            </div>
 
             <Line></Line>
             <h2 className="ui dividing header centered">"Easier Said Than Done?" Well, Not Really</h2>
@@ -205,13 +222,17 @@ class SalesLetterPage extends React.Component {
               confusing. You could trial-and-error your way through, but it’s not going to be a bed of roses.
             </p>
             <p>Most (if not all) of us share relatively similar self-discovering struggles:</p>
-            <p>…Pursuing certain passions without being sure if they’re aligned to your purpose…</p>
-            <p>
-              …Chasing after your goals, not knowing if these goals are truly yours or merely influences from others…
-            </p>
-            <p>
-              …Just going along for the ride without being fully in control of defining what you want to experience…
-            </p>
+            <div className="ui large bulleted list">
+                <div className="bolt">
+                    Pursuing certain passions without being sure if they’re aligned to your purpose…
+                </div>    
+                <div className="bolt">
+                    Chasing after your goals, not knowing if these goals are truly yours or merely influences from others…
+                </div>
+                <div className="bolt">
+                    Just going along for the ride without being fully in control of defining what you want to experience…
+                </div>
+            </div>
             <p>
               No matter how old, how wise, how happy we are, same struggles of awkwardly fumbling our way through remain
               the same; in a desperate race against time to figure out this whole “who we are” thing.
@@ -221,12 +242,20 @@ class SalesLetterPage extends React.Component {
               personality, people, and purpose.
             </p>
             <p>Imagine having a mentor for your most ideal self: One that…</p>
-            <p>
-              Helps you define the exact things you want - stripped of influences from your upbringing, the media, and
-              external environment
-            </p>
-            <p>Gives you an uncompromising model to follow, aspire to, and strive to be</p>
-            <p>Guides you to discover your true purpose, your undiscovered passions, and innate personality</p>
+      
+            <div className="ui large bulleted list">
+                <div className="bolt">
+                    Helps you define the exact things you want - stripped of influences from your upbringing, the media, and
+                    external environment
+                </div>
+                <div className="bolt">
+                    Gives you an uncompromising model to follow, aspire to, and strive to be
+                </div>
+                <div className="bolt">
+                    Guides you to discover your true purpose, your undiscovered passions, and innate personality
+                </div>
+            </div>
+      
             <p>
               {this.props.username ? this.props.username : "Friend"}, you don’t have to hide behind a face that’s not
               your own, or feel as if life’s just a passing phase.
@@ -234,7 +263,7 @@ class SalesLetterPage extends React.Component {
 
             <Line></Line>
             <h2 className="ui dividing header centered">There Is A Path For Your Next Evolution</h2>
-
+            <img alt="road background" src={road} className="sl-img" />
             <p>
               Every single respectable, purposeful, and successful individual to walk the face of the earth (regardless
               of their archetype and regardless of their personality type), uncovered their personal paths through some
@@ -250,7 +279,7 @@ class SalesLetterPage extends React.Component {
             <p>And it all begins with making a defining choice.</p>
             <Line></Line>
             <h2 className="ui dividing header centered">There Is A Path To A Concrete Purpose</h2>
-
+            <img alt="valley background" src={valley} className="sl-img" />
             <p>
               Humans are fickle beings - our why’s shift along with our moods, and that definite purpose we were so sure
               of just a week ago quickly turns murky.
@@ -265,6 +294,7 @@ class SalesLetterPage extends React.Component {
             </p>
             <p>Gone will be the days of uncertainty, idleness, and watching the years simply pass you by.</p>
             <h2 className="ui dividing header centered">There Is A Path To Limitless Growth</h2>
+            <img alt="meadow background" src={meadow} className="sl-img" />
             <p>
               Discover how you can leverage on your {this.state.content.archetype}’s hidden talents and personality
               traits to continuously blossom, and strike off your most desired goals and achievements.
@@ -280,6 +310,7 @@ class SalesLetterPage extends React.Component {
             </p>
             <Line></Line>
             <h2 className="ui dividing header centered">There Is A Path To Picture-Perfect Love</h2>
+            <img alt="love background" src={love} className="sl-img" />
             <p>
               The stronger your relationship with yourself, the more fulfilling and powerful your relationships will be
               with others.
@@ -321,6 +352,8 @@ class SalesLetterPage extends React.Component {
               weaknesses, and a complete exposé of the biggest challenge you will have to conquer as a{" "}
               {this.state.content.archetype}.
             </p>
+            {/*Display Dynamic Cover For Archetype*/}
+            <img alt="premium archetype profile" src={cover} className="cover-img" />
             <p>
               And of course, just as we model the successes before us, you will have a figure to follow - giving you the
               most experiential and accelerated results possible.
@@ -341,48 +374,48 @@ class SalesLetterPage extends React.Component {
               {this.state.content.archetype} secrets you can use to massively transform your life:
             </p>
             <div className="ui large bulleted list">
-              <div className="item">
-                Discover the “X Factor” of your unique personality composition that can make you instantly more
-                memorable and magnetic.
+              <div className="check-circle">
+                Discover the <strong>“X Factor”</strong> of your unique personality composition that can make you instantly more
+                <u>memorable and magnetic.</u>
               </div>
-              <div className="item">
-                Avoid making mistakes in personal interactions and passion pursuits by mastering your personality’s
-                hidden “achilles heel”.
+              <div className="check-circle">
+                Avoid making mistakes in personal interactions and passion pursuits by mastering your <strong>personality’s
+                hidden “achilles heel”.</strong>
+              </div>rt
+              <div className="check-circle">
+                The <strong>2 most fulfilling goals</strong> that you secretly want to achieve and help you <u>make your mark on the world.</u>
               </div>
-              <div className="item">
-                The 2 most fulfilling goals that you secretly want to achieve and help you make your mark on the world.
+              <div className="check-circle">
+                Gain access to a designated and <strong>personality-tailored path</strong> to conquering your personality’s most
+                crippling fears to live a life of <u>courage and constant improvement.</u>
               </div>
-              <div className="item">
-                Gain access to a designated and personality-tailored path to conquering your personality’s most
-                crippling fears to live a life of courage and constant improvement.
+              <div className="check-circle">
+                Become the <strong>“dragon slayer” of your narrative -</strong> who overcomes the most impossible challenges and obstacles by leveraging on
+                your personality’s <u>unique strengths and talents.</u>
               </div>
-              <div className="item">
-                Become a “dragon slayer” who overcomes the most impossible challenges and obstacles by leveraging on
-                your personality’s unique strengths and talents.
+              <div className="check-circle">
+                Know your <strong>emarkable gifts and virtues</strong> that define you as a {this.state.content.archetype}.
               </div>
-              <div className="item">
-                Know your remarkable gifts and virtues that define you as a {this.state.content.archetype}.
+              <div className="check-circle">
+                Identify the <strong>Shadows</strong> of your archetype that are holding you back from achieving more - and then discover
+                how you can set them ablaze and <u>live out your best self.</u>
               </div>
-              <div className="item">
-                Identify the Shadows of your archetype that are holding you back from achieving more - and then discover
-                how you can set them ablaze and live out your best self.
+              <div className="check-circle">
+                Follow a <strong>progressive path</strong> that will elevate you to the highest levels of what it means to be an <u>esteemed
+                and distinguished {this.state.content.archetype}.</u>
               </div>
-              <div className="item">
-                Follow a progressive path that will elevate you to the highest levels of what it means to be an esteemed
-                and distinguished {this.state.content.archetype}
-              </div>
-              <div className="item">
+              <div className="check-circle">
                 Pin-point the exact place where you are in life right now, and the exact actions you need to take to
-                achieve your goals and desires by unearthing the various ways your archetype and personality manifests
+                <strong>achieve your goals and desires</strong> by unearthing the various ways your archetype and personality manifests
                 itself.
               </div>
-              <div className="item">
-                Start killing it in your career with actionable “personality tricks” that you can apply immediately to
-                become more influential, noticeable, and valued.
+              <div className="check-circle">
+                Start killing it in your career with actionable <strong>“personality tricks”</strong> that you can apply immediately to
+                become more <u>influential, noticeable, and valued.</u>
               </div>
-              <div className="item">
-                Embrace your entrepreneurial spirit when you discover the various industries and business opportunities
-                where your personality construct will not only survive, but thrive!
+              <div className="check-circle">
+                Embrace your <strong>entrepreneurial spirit</strong> when you discover the various industries and <u>business opportunities</u>
+                 where your personality construct will not only survive, but thrive!
               </div>
             </div>
             <Line></Line>
@@ -400,7 +433,7 @@ class SalesLetterPage extends React.Component {
                 much higher.”
               </em>
             </p>
-            <p>A single college textbook costs TEN TIMES that. And graduates almost NEVER give them a second look.</p>
+            <p>A single college textbook costs TEN TIMES that. And graduates almost NEVER give it a second look.</p>
             <p>No fake inflated prices.</p>
             <p>No fake discounts.</p>
             <p>No silly gimmicks</p>

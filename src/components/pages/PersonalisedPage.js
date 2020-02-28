@@ -53,7 +53,7 @@ class PersonalisedPage extends React.Component {
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
-            <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
+            <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
             <p>
@@ -124,7 +124,7 @@ class PersonalisedPage extends React.Component {
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
-            <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
+            <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
             <h3 className="ui header">Strengths:</h3>
@@ -141,7 +141,7 @@ class PersonalisedPage extends React.Component {
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
-            <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
+            <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
             <h3 className="ui header">Goals:</h3>
@@ -156,7 +156,7 @@ class PersonalisedPage extends React.Component {
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
-            <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
+            <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
             <h3 className="ui header">Fears:</h3>
@@ -171,7 +171,7 @@ class PersonalisedPage extends React.Component {
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
-            <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
+            <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
             <h3 className="ui header">Challenges &amp; Dragons:</h3>
@@ -186,7 +186,7 @@ class PersonalisedPage extends React.Component {
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
-            <Header.Content>Your {archetype.archetype} Archetype</Header.Content>
+            <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
           <div class="left-line">
             <h3 className="ui header">Resolutions:</h3>
@@ -198,7 +198,7 @@ class PersonalisedPage extends React.Component {
 
     return (
       <div className="ui vertical stripe quote segment">
-        <Divider title="ARCHETYPE RESULTS" />
+        <Divider title="Archetype Results" />
         {this.state.placeholder ? (
           <div className="ui middle aligned stackable grid container">
             <div className="row">

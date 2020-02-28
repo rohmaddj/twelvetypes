@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="ui footer center aligned stackable grid container">
         <div className="ui text center container">
           <img alt="TwelveTypes Logo" src={logo} />
-          <p>
+          <p className="footer-desc">
             Discover your strengths, weaknesses, and drastically improve your ability to adapt by uncovering your personality archetypes.
           </p>
         </div>

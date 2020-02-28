@@ -438,7 +438,7 @@ class ListQuiz extends React.Component {
             <div className="five wide column">
               {question.id === 10 ? (
                 <button
-                  className="ui huge button rounded-button"
+                  className="ui huge button submit-button"
                   onClick={evt => this.props.onNextButton(question.id + 1)}
                 >
                   SUBMIT

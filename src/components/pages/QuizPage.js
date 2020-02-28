@@ -87,12 +87,12 @@ class QuizPage extends React.Component {
         />
 
         <Modal size={size} open={open} onClose={this.close}>
-          <Modal.Header>Notification</Modal.Header>
+          <Modal.Header>You can only select three options!</Modal.Header>
           <Modal.Content>
-            <p>Sorry, you already choose top three answers</p>
+            <p>You can click/tap on an existing selection to de-select it</p>
           </Modal.Content>
           <Modal.Actions>
-            <Button positive onClick={this.close.bind()}>
+            <Button onClick={this.close.bind()}>
               Okay
             </Button>
           </Modal.Actions>

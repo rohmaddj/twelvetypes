@@ -53,7 +53,7 @@ class Header extends React.Component {
                 About
               </Link>
               <Link className="item" to="/archetype">
-                Archetype
+                Archetypes
               </Link>
               <Link className="item" to="/contact">
                 Contact
@@ -78,7 +78,7 @@ class Header extends React.Component {
                 </Link>
               ) : (
                 <Link className="b-special ui huge button" to="/quiz">
-                  TAKE THE QUIZ
+                  PERSONALITY TEST
                 </Link>
               )}
             </div>
