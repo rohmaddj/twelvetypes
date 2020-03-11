@@ -33,8 +33,8 @@ class App extends React.Component {
           <Route exact path="/register" component={Register} />
           <Route exact path="/menu" component={SidebarMenu} />
           <Route exact path="/demo-result" component={DemoResultPage} />
-          <Route exact path="/personalised" component={PersonalisedPage} />
-          <Route exact path="/offer" component={SalesLetterPage} />
+          <Route exact path="/reading" component={PersonalisedPage} />
+          <Route exact path="/reading/offer" component={SalesLetterPage} />
 
           <PrivateRoute path="/member" component={MemberPage} />
           <PrivateRoute path="/dashboard" component={DashboardPage} />

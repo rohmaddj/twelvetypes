@@ -4,7 +4,6 @@ import { Placeholder } from "semantic-ui-react";
 import Divider from "../child/Divider";
 import { connect } from "react-redux";
 import Line from "../child/freereading/Line";
-import { Link } from "react-router-dom";
 
 // images
 import meadow from "../../assets/images/free-reading/meadow.svg";
@@ -18,23 +17,25 @@ class SalesLetterPage extends React.Component {
   state = { placeholder: true, content: "" };
   componentDidMount = async () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    let params = new URLSearchParams(window.location.search);
-    try {
-      const response = await twelveTypes.get("/getSalesLetter", {
-        headers: {
-          Authorization: "Bearer " + this.props.token
-        },
-        params: {
-          archetype: this.props.personalised[0] !== undefined ? this.props.personalised[0].archetype : "caregiver"
-        }
-      });
-      this.setState({
-        placeholder: false,
-        content: response.data.data
-      });
-      console.log(response);
-    } catch (error) {
-      console.log(error);
+    if (this.props.personalised.length > 0) {
+      try {
+        const response = await twelveTypes.get("/getSalesLetter", {
+          headers: {
+            Authorization: "Bearer " + this.props.token
+          },
+          params: {
+            archetype: this.props.personalised[0] !== undefined ? this.props.personalised[0].archetype : "caregiver"
+          }
+        });
+        this.setState({
+          placeholder: false,
+          content: response.data.data
+        });
+      } catch (error) {
+        this.props.history.push("/dashboard");
+      }
+    } else {
+      this.props.history.push("/dashboard");
     }
   };
 
@@ -84,9 +85,7 @@ class SalesLetterPage extends React.Component {
             </div>
             <div className="row">
               <div className="sixteen wide column">
-                <h3 className="ui dividing header centered">
-                  Manifesto of the {this.state.content.s1}
-                </h3>
+                <h3 className="ui dividing header centered">Manifesto of the {this.state.content.s1}</h3>
               </div>
             </div>
             <p>
@@ -122,7 +121,9 @@ class SalesLetterPage extends React.Component {
               evolve and become a happier, wiser, more confident, and more fulfilled version of you.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header centered">Create Distinctions Between Your Current Identity And Desired Self</h2>
+            <h2 className="ui dividing header centered">
+              Create Distinctions Between Your Current Identity And Desired Self
+            </h2>
             <p>
               There’s much more you wish to achieve, and there’s no telling just how bright and beautiful your future
               can become.
@@ -172,21 +173,11 @@ class SalesLetterPage extends React.Component {
             </p>
             <p>Perhaps you’d…</p>
             <div className="ui large bulleted list">
-                <div className="bolt">
-                    Experience the full depths of your relationships with others
-                </div>
-                <div className="bolt">
-                    Find yourself saying “Yes” a lot more
-                </div>
-                <div className="bolt">
-                    Uncover that courage you needed to pursue your passions
-                </div>
-                <div className="bolt">
-                    Rapidly expand your network through genuine connections
-                </div>
-                <div className="bolt">
-                    Finally becoming at peace with your true self
-                </div>
+              <div className="bolt">Experience the full depths of your relationships with others</div>
+              <div className="bolt">Find yourself saying “Yes” a lot more</div>
+              <div className="bolt">Uncover that courage you needed to pursue your passions</div>
+              <div className="bolt">Rapidly expand your network through genuine connections</div>
+              <div className="bolt">Finally becoming at peace with your true self</div>
             </div>
 
             <Line></Line>
@@ -223,15 +214,15 @@ class SalesLetterPage extends React.Component {
             </p>
             <p>Most (if not all) of us share relatively similar self-discovering struggles:</p>
             <div className="ui large bulleted list">
-                <div className="bolt">
-                    Pursuing certain passions without being sure if they’re aligned to your purpose…
-                </div>    
-                <div className="bolt">
-                    Chasing after your goals, not knowing if these goals are truly yours or merely influences from others…
-                </div>
-                <div className="bolt">
-                    Just going along for the ride without being fully in control of defining what you want to experience…
-                </div>
+              <div className="bolt">
+                Pursuing certain passions without being sure if they’re aligned to your purpose…
+              </div>
+              <div className="bolt">
+                Chasing after your goals, not knowing if these goals are truly yours or merely influences from others…
+              </div>
+              <div className="bolt">
+                Just going along for the ride without being fully in control of defining what you want to experience…
+              </div>
             </div>
             <p>
               No matter how old, how wise, how happy we are, same struggles of awkwardly fumbling our way through remain
@@ -242,20 +233,18 @@ class SalesLetterPage extends React.Component {
               personality, people, and purpose.
             </p>
             <p>Imagine having a mentor for your most ideal self: One that…</p>
-      
+
             <div className="ui large bulleted list">
-                <div className="bolt">
-                    Helps you define the exact things you want - stripped of influences from your upbringing, the media, and
-                    external environment
-                </div>
-                <div className="bolt">
-                    Gives you an uncompromising model to follow, aspire to, and strive to be
-                </div>
-                <div className="bolt">
-                    Guides you to discover your true purpose, your undiscovered passions, and innate personality
-                </div>
+              <div className="bolt">
+                Helps you define the exact things you want - stripped of influences from your upbringing, the media, and
+                external environment
+              </div>
+              <div className="bolt">Gives you an uncompromising model to follow, aspire to, and strive to be</div>
+              <div className="bolt">
+                Guides you to discover your true purpose, your undiscovered passions, and innate personality
+              </div>
             </div>
-      
+
             <p>
               {this.props.username ? this.props.username : "Friend"}, you don’t have to hide behind a face that’s not
               your own, or feel as if life’s just a passing phase.
@@ -364,7 +353,9 @@ class SalesLetterPage extends React.Component {
               self-discovery; one that’s going to help you fully embrace who you truly are.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header centered">You’ve just dipped your toes… Now get ready to take the plunge!</h2>
+            <h2 className="ui dividing header centered">
+              You’ve just dipped your toes… Now get ready to take the plunge!
+            </h2>
             <p>
               The free archetype results you’ve just seen is merely a fraction of the personalised insights and wisdom
               that you can gain immediate access to!
@@ -375,47 +366,52 @@ class SalesLetterPage extends React.Component {
             </p>
             <div className="ui large bulleted list">
               <div className="check-circle">
-                Discover the <strong>“X Factor”</strong> of your unique personality composition that can make you instantly more
+                Discover the <strong>“X Factor”</strong> of your unique personality composition that can make you
+                instantly more
                 <u>memorable and magnetic.</u>
               </div>
               <div className="check-circle">
-                Avoid making mistakes in personal interactions and passion pursuits by mastering your <strong>personality’s
-                hidden “achilles heel”.</strong>
-              </div>rt
+                Avoid making mistakes in personal interactions and passion pursuits by mastering your{" "}
+                <strong>personality’s hidden “achilles heel”.</strong>
+              </div>
+              rt
               <div className="check-circle">
-                The <strong>2 most fulfilling goals</strong> that you secretly want to achieve and help you <u>make your mark on the world.</u>
+                The <strong>2 most fulfilling goals</strong> that you secretly want to achieve and help you{" "}
+                <u>make your mark on the world.</u>
               </div>
               <div className="check-circle">
-                Gain access to a designated and <strong>personality-tailored path</strong> to conquering your personality’s most
-                crippling fears to live a life of <u>courage and constant improvement.</u>
+                Gain access to a designated and <strong>personality-tailored path</strong> to conquering your
+                personality’s most crippling fears to live a life of <u>courage and constant improvement.</u>
               </div>
               <div className="check-circle">
-                Become the <strong>“dragon slayer” of your narrative -</strong> who overcomes the most impossible challenges and obstacles by leveraging on
-                your personality’s <u>unique strengths and talents.</u>
+                Become the <strong>“dragon slayer” of your narrative -</strong> who overcomes the most impossible
+                challenges and obstacles by leveraging on your personality’s <u>unique strengths and talents.</u>
               </div>
               <div className="check-circle">
-                Know your <strong>emarkable gifts and virtues</strong> that define you as a {this.state.content.archetype}.
+                Know your <strong>emarkable gifts and virtues</strong> that define you as a{" "}
+                {this.state.content.archetype}.
               </div>
               <div className="check-circle">
-                Identify the <strong>Shadows</strong> of your archetype that are holding you back from achieving more - and then discover
-                how you can set them ablaze and <u>live out your best self.</u>
+                Identify the <strong>Shadows</strong> of your archetype that are holding you back from achieving more -
+                and then discover how you can set them ablaze and <u>live out your best self.</u>
               </div>
               <div className="check-circle">
-                Follow a <strong>progressive path</strong> that will elevate you to the highest levels of what it means to be an <u>esteemed
-                and distinguished {this.state.content.archetype}.</u>
+                Follow a <strong>progressive path</strong> that will elevate you to the highest levels of what it means
+                to be an <u>esteemed and distinguished {this.state.content.archetype}.</u>
               </div>
               <div className="check-circle">
                 Pin-point the exact place where you are in life right now, and the exact actions you need to take to
-                <strong>achieve your goals and desires</strong> by unearthing the various ways your archetype and personality manifests
-                itself.
+                <strong>achieve your goals and desires</strong> by unearthing the various ways your archetype and
+                personality manifests itself.
               </div>
               <div className="check-circle">
-                Start killing it in your career with actionable <strong>“personality tricks”</strong> that you can apply immediately to
-                become more <u>influential, noticeable, and valued.</u>
+                Start killing it in your career with actionable <strong>“personality tricks”</strong> that you can apply
+                immediately to become more <u>influential, noticeable, and valued.</u>
               </div>
               <div className="check-circle">
-                Embrace your <strong>entrepreneurial spirit</strong> when you discover the various industries and <u>business opportunities</u>
-                 where your personality construct will not only survive, but thrive!
+                Embrace your <strong>entrepreneurial spirit</strong> when you discover the various industries and{" "}
+                <u>business opportunities</u>
+                where your personality construct will not only survive, but thrive!
               </div>
             </div>
             <Line></Line>
@@ -462,7 +458,9 @@ class SalesLetterPage extends React.Component {
               because in the last 6 months, LESS than 5% of the TwelveTypes faction have asked for their money back.
             </p>
             <Line></Line>
-            <h2 className="ui dividing header centered">What would it take to see a grand, enormous change in your life?</h2>
+            <h2 className="ui dividing header centered">
+              What would it take to see a grand, enormous change in your life?
+            </h2>
             <p>If all this did was create that spark you needed to wholly accept the truth about who you are…</p>
             <p>Or give you the courage and certainty to trust your instincts when making astronomical decisions…</p>
             <p>
@@ -482,6 +480,7 @@ class SalesLetterPage extends React.Component {
               <a
                 href="http://twelvetypes-test.individua1.pay.clickbank.net/"
                 className="ui huge submit button custom-background-orange"
+                target="_blank"
               >
                 Upgrade To Premium
               </a>

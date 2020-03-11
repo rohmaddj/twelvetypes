@@ -37,88 +37,17 @@ class PersonalisedPage extends React.Component {
               primaryTraits:
                 response.data.data[0].p1 + ", " + response.data.data[1].p1 + ", and " + response.data.data[2].p1
             });
-            console.log(response);
           } catch (error) {
-            console.log(error);
+            this.props.history.push("/dashboard");
           }
         }
       );
     } else {
+      this.props.history.push("/dashboard");
     }
   };
 
   render() {
-    const archetypes = this.props.personalised.map(archetype => {
-      return (
-        <Container key={archetype.archetype}>
-          <Header as="h2" className={archetype.archetype}>
-            <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
-            <Header.Content>{archetype.archetype} Archetype</Header.Content>
-          </Header>
-          <div class="left-line">
-            <p>
-              The archetypes forming your personality comprises an incredibly unique combination, representing a
-              harmonious synergy between your primary traits: {archetype.p1}.
-            </p>
-            <h3 className="ui header">Strengths:</h3>
-            <p>{archetype.p2}</p>
-            <h3 className="ui header">Weaknesses:</h3>
-            <p>{archetype.p3}</p>
-            <h3 className="ui header">Goals:</h3>
-            <p>{archetype.p4}</p>
-            <h3 className="ui header">Fears:</h3>
-            <p>
-              The presence of these archetypes in your personality construct indicate several fears you should be weary
-              of.
-            </p>
-            <p>{archetype.p5}</p>
-            <p>
-              With that, you will do everything in your power to prevent such from happening and as your personality
-              comprises the {this.props.personalised[0].archetype}, {this.props.personalised[1].archetype} and
-              {this.props.personalised[2].archetype} archetypes, realizing your fears and weak points will not always
-              lead you to the worst scenarios. Instead, taking them in rationally will allow you to prevent or avoid
-              them. Being aware of your negative tendencies and thoughts will lead you to higher levels of self-mastery.
-            </p>
-            <h3 className="ui header">Challenges:</h3>
-            <p>
-              As a result of these fears, there are several challenges that tend to arise. These are a few examples of
-              what could stand in your way through the course of your life.
-            </p>
-            <p>{archetype.p6}</p>
-            <p>
-              Each archetype will always have their dragons, as this is one way for their archetype to grow. By slaying
-              one dragon, a bigger one will always come up, and each time you do conquer it, you move a tier higher in
-              the quest of life.
-            </p>
-            <h3 className="ui header">Resolution:</h3>
-            <p>
-              Given that each archetype must face their own dragon/problem, it is necessary to have an idea of a general
-              response. When things get rough for you, going back to this core response will help you regain focus on
-              beating that dragon.
-            </p>
-            <p>{archetype.p7}</p>
-            <p>
-              With these, the whole point of going back to the core idea of your response is to continually evaluate if
-              you are living out your archetype in a way that doesn't empower your dragon. Paying attention to key
-              indicators can help prevent such from happening, leading you to a healthier, centred, and more self-aware
-              sense of self.
-            </p>
-          </div>
-        </Container>
-      );
-    });
-
-    const HeaderBro = (
-      <Container>
-        <p>
-          {/* The archetypes forming your personality comprises an incredibly unique combination, representing a harmonious
-          synergy between your primary traits: {this.props.personalised[0]},{this.props.personalised[1]} and
-          {this.props.personalised[3]} */}
-        </p>
-        <p>Let's start with looking into the core strengths and weaknesses of your personality's archetypes.</p>
-      </Container>
-    );
-
     const StrengthsAndWeaknesses = this.props.personalised.map(archetype => {
       return (
         <Container key={archetype.archetype}>
@@ -126,7 +55,7 @@ class PersonalisedPage extends React.Component {
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
-          <div class="left-line">
+          <div className="left-line">
             <h3 className="ui header">Strengths:</h3>
             <p className="text-silver">{archetype.p2}</p>
             <h3 className="ui header">Weaknesses:</h3>
@@ -143,7 +72,7 @@ class PersonalisedPage extends React.Component {
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
-          <div class="left-line">
+          <div className="left-line">
             <h3 className="ui header">Goals:</h3>
             <p className="text-silver">{archetype.p4}</p>
           </div>
@@ -158,7 +87,7 @@ class PersonalisedPage extends React.Component {
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
-          <div class="left-line">
+          <div className="left-line">
             <h3 className="ui header">Fears:</h3>
             <p className="text-silver">{archetype.p5}</p>
           </div>
@@ -173,7 +102,7 @@ class PersonalisedPage extends React.Component {
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
-          <div class="left-line">
+          <div className="left-line">
             <h3 className="ui header">Challenges &amp; Dragons:</h3>
             <p className="text-silver">{archetype.p6}</p>
           </div>
@@ -188,7 +117,7 @@ class PersonalisedPage extends React.Component {
             <Image src={`https://api.individualogist.com/img/archetype/logos/${archetype.archetype}.webp`} />
             <Header.Content>{archetype.archetype} Archetype</Header.Content>
           </Header>
-          <div class="left-line">
+          <div className="left-line">
             <h3 className="ui header">Resolutions:</h3>
             <p className="text-silver">{archetype.p7}</p>
           </div>
@@ -305,7 +234,7 @@ class PersonalisedPage extends React.Component {
               self.
             </p>
             <div className="ui centered column row remove-padding">
-              <Link to="/offer" className="ui huge submit button custom-background-orange">
+              <Link to="/reading/offer" className="ui huge submit button custom-background-orange">
                 Continue
               </Link>
             </div>

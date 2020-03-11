@@ -7,7 +7,6 @@ import { Container, Image, Header } from "semantic-ui-react";
 import Chart from "react-apexcharts";
 import { Link } from "react-router-dom";
 import PlaceholderDashboard from "../child/placeholder/PlaceholderDashboard";
-import HeaderPersonalised from "../child/personalised/HeaderPersonalised";
 
 class DashboardPage extends React.Component {
   constructor() {
@@ -279,7 +278,6 @@ class DashboardPage extends React.Component {
             <PlaceholderDashboard />
           ) : (
             <div className="row align-vcenter">
-              
               <div className="seven wide column">
                 <div className="logo-overlay"></div>
                 <Chart options={this.state.optionsPie} series={this.state.seriesPie} type="donut" />
@@ -303,16 +301,6 @@ class DashboardPage extends React.Component {
                           <p className="text-silver">{data.interpretation.content}</p>
                         </div>
                       </div>
-                      {/* <Header as="h2" className={archetype}>
-                        <Image
-                          src={`https://individualogist.com/wp-content/themes/indivi-wp/img/icons/${
-                            Object.keys(data)[0]
-                          }.webp`}
-                        />
-                        <Header.Content>{data[archetype] + " " + archetype}</Header.Content>
-                      </Header>
-                      <p>{data.interpretation.content}</p>
-                      <br /> */}
                     </Container>
                   );
                 })}
@@ -323,7 +311,7 @@ class DashboardPage extends React.Component {
             {this.state.placeholder ? (
               ""
             ) : (
-              <Link to="/personalised" className="ui huge submit button custom-background-orange">
+              <Link to="/reading" className="ui huge submit button custom-background-orange">
                 Learn More About My Archetypes
               </Link>
             )}
