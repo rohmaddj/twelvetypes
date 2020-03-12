@@ -52,31 +52,31 @@ class DashboardPage extends React.Component {
           newPieLabels.map(data => {
             if (response.data.top_answers[data] !== 0) {
               newPieSeries.push(response.data.top_answers[data]);
-              if (data === "caregiver") {
-                newPieColors.push("#d53f98");
-              } else if (data === "creator") {
-                newPieColors.push("#895ba5");
-              } else if (data === "explorer") {
-                newPieColors.push("#46b4e8");
-              } else if (data === "warrior") {
-                newPieColors.push("#2f3192");
-              } else if (data === "idealist") {
-                newPieColors.push("#f2cd46");
-              } else if (data === "jester") {
-                newPieColors.push("#b84f9e");
-              } else if (data === "lover") {
-                newPieColors.push("#d63f40");
-              } else if (data === "magician") {
-                newPieColors.push("#eaae42");
-              } else if (data === "everyman") {
-                newPieColors.push("#60bb46");
-              } else if (data === "rebel") {
-                newPieColors.push("#771818");
-              } else if (data === "ruler") {
-                newPieColors.push("#e0c542");
-              } else if (data === "sage") {
-                newPieColors.push("#49a687");
-              }
+                if (data === "caregiver") {
+                  newPieColors.push("#913233");
+                } else if (data === "creator") {
+                  newPieColors.push("#5e792f");
+                } else if (data === "explorer") {
+                  newPieColors.push("#2d3036");
+                } else if (data === "warrior") {
+                  newPieColors.push("#284b53");
+                } else if (data === "idealist") {
+                  newPieColors.push("#a07f00");
+                } else if (data === "jester") {
+                  newPieColors.push("#1e6da4");
+                } else if (data === "lover") {
+                  newPieColors.push("#d53f3e");
+                } else if (data === "magician") {
+                  newPieColors.push("#1b254c");
+                } else if (data === "everyman") {
+                  newPieColors.push("#726675");
+                } else if (data === "rebel") {
+                  newPieColors.push("#6c6245");
+                } else if (data === "ruler") {
+                  newPieColors.push("#b09910");
+                } else if (data === "sage") {
+                  newPieColors.push("#887f5a");
+                }
             }
             return true;
           });
@@ -134,29 +134,29 @@ class DashboardPage extends React.Component {
           if (response.data.top_answers[data] !== 0) {
             newPieSeries.push(response.data.top_answers[data]);
             if (data === "caregiver") {
-              newPieColors.push("#d53f98");
+              newPieColors.push("#913233");
             } else if (data === "creator") {
-              newPieColors.push("#895ba5");
+              newPieColors.push("#5e792f");
             } else if (data === "explorer") {
-              newPieColors.push("#46b4e8");
+              newPieColors.push("#2d3036");
             } else if (data === "warrior") {
-              newPieColors.push("#2f3192");
+              newPieColors.push("#284b53");
             } else if (data === "idealist") {
-              newPieColors.push("#f2cd46");
+              newPieColors.push("#a07f00");
             } else if (data === "jester") {
-              newPieColors.push("#b84f9e");
+              newPieColors.push("#1e6da4");
             } else if (data === "lover") {
-              newPieColors.push("#d63f40");
+              newPieColors.push("#d53f3e");
             } else if (data === "magician") {
-              newPieColors.push("#eaae42");
+              newPieColors.push("#1b254c");
             } else if (data === "everyman") {
-              newPieColors.push("#60bb46");
+              newPieColors.push("#726675");
             } else if (data === "rebel") {
-              newPieColors.push("#771818");
+              newPieColors.push("#6c6245");
             } else if (data === "ruler") {
-              newPieColors.push("#e0c542");
+              newPieColors.push("#b09910");
             } else if (data === "sage") {
-              newPieColors.push("#49a687");
+              newPieColors.push("#887f5a");
             }
           }
           return true;
@@ -214,29 +214,29 @@ class DashboardPage extends React.Component {
           if (response.data.top_answers[data] !== 0) {
             newPieSeries.push(response.data.top_answers[data]);
             if (data === "caregiver") {
-              newPieColors.push("#d53f98");
+              newPieColors.push("#913233");
             } else if (data === "creator") {
-              newPieColors.push("#895ba5");
+              newPieColors.push("#5e792f");
             } else if (data === "explorer") {
-              newPieColors.push("#46b4e8");
+              newPieColors.push("#2d3036");
             } else if (data === "warrior") {
-              newPieColors.push("#2f3192");
+              newPieColors.push("#284b53");
             } else if (data === "idealist") {
-              newPieColors.push("#f2cd46");
+              newPieColors.push("#a07f00");
             } else if (data === "jester") {
-              newPieColors.push("#b84f9e");
+              newPieColors.push("#1e6da4");
             } else if (data === "lover") {
-              newPieColors.push("#d63f40");
+              newPieColors.push("#d53f3e");
             } else if (data === "magician") {
-              newPieColors.push("#eaae42");
+              newPieColors.push("#1b254c");
             } else if (data === "everyman") {
-              newPieColors.push("#60bb46");
+              newPieColors.push("#726675");
             } else if (data === "rebel") {
-              newPieColors.push("#771818");
+              newPieColors.push("#6c6245");
             } else if (data === "ruler") {
-              newPieColors.push("#e0c542");
+              newPieColors.push("#b09910");
             } else if (data === "sage") {
-              newPieColors.push("#49a687");
+              newPieColors.push("#887f5a");
             }
           }
           return true;
