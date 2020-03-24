@@ -252,7 +252,7 @@ body {
   border-radius: 50px;
 }
 .ui.button.white:hover,.ui.button:hover{
-    background: #ed6463;
+    background: #52beb2 !important;
     box-shadow: 0 5px 15px rgba(0,0,0,.15);
     color: #fff;
     transition:.4s;
@@ -1299,40 +1299,40 @@ ul.horizontal-list li:before {
 }
 
 h2.caregiver .content {
-  color: #d53f98;
+  color: #913233;
 }
 h2.creator .content {
-  color: #895ba5;
+  color: #5e792f;
 }
 h2.explorer .content {
-  color: #46b4e8
+  color: #2d3036
 }
 h2.warrior .content {
-  color: #2f3192
+  color: #284b53
 }
 h2.idealist .content {
-  color: #f2cd46
+  color: #a07f00
 }
 h2.jester .content {
-  color: #b84f9e;
+  color: #1e6da4;
 }
 h2.lover .content {
-  color: #d63f40
+  color: #d53f3e
 }
 h2.magician .content {
-  color: #eaae42
+  color: #1b254c
 }
 h2.everyman .content {
-  color: #60bb46
+  color: #726675
 }
 h2.rebel .content {
-  color: #771818
+  color: #6c6245
 }
 h2.ruler .content {
-  color: #e0c542
+  color: #b09910
 }
 h2.sage .content {
-  color: #49a687
+  color: #887f5a
 }
 .ui.progress, .ui.progress-custom .bar {
   border: none;
@@ -1350,6 +1350,11 @@ h2.sage .content {
   position:relative!important;
   max-width:500px !important;    
   margin:1em auto;
+}
+.ui.button.custom-background-orange:after {
+    font-family: Icons;
+    content: "\f152";
+    padding-left: 10px;
 }
 .ui.button.custom-background-orange:hover {
   -webkit-transition: 0.4s;
