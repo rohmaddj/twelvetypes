@@ -7,26 +7,14 @@ import { signIn } from "../../actions/index";
 import twelveType from "../../api/twelveType";
 import Divider from "../child/Divider";
 
+// images
+import cover from "../../assets/images/covers/Cover_Caregiver.png";
+
 const cards = [
   {
-    avatar: "https://react.semantic-ui.com/images/avatar/large/helen.jpg",
-    date: "Joined in 2013",
-    header: "Premium Personality Profile",
-    description: "Primary Contact",
-    link: "http://twelvetypes-test.individua1.pay.clickbank.net/"
-  },
-  {
-    avatar: "https://react.semantic-ui.com/images/avatar/large/matthew.png",
-    date: "Joined in 2013",
-    header: "Matthew",
-    description: "Primary Contact",
-    link: "http://twelvetypes-test.individua1.pay.clickbank.net/"
-  },
-  {
-    avatar: "https://react.semantic-ui.com/images/avatar/large/molly.png",
-    date: "Joined in 2013",
-    header: "Molly",
-    description: "Primary Contact",
+    avatar: cover,
+    header: "Premium Archetype Profile",
+    description: "Thank you for your purchase! You can now access your Premium Archetype Profile by clicking on the button below!",
     link: "http://twelvetypes-test.individua1.pay.clickbank.net/"
   }
 ];
@@ -137,7 +125,7 @@ class MemberArea extends Component {
                     <Card.Content extra>
                       {this.state.purchased ? (
                         <a href={this.state.downloadLink} target="_blank" rel="noopener noreferrer">
-                          <Button disabled={loading} primary>
+                          <Button disabled={loading} className="download">
                             Download
                           </Button>
                         </a>
@@ -150,12 +138,11 @@ class MemberArea extends Component {
                             this.props.username
                           }
                         >
-                          <Button disabled={loading} primary>
+                          <Button disabled={loading} className="download">
                             Learn More
                           </Button>
                         </a>
                       )}
-                      <Button disabled={loading}>Share</Button>
                     </Card.Content>
                   </Card>
                 ))}

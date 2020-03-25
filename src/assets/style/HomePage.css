@@ -7,6 +7,9 @@ body {
 .hidden.menu {
   display: none;
 }
+.ui.three.cards>.card {
+    margin: 1em auto;
+}
 
 .column.explorer::after {
   background-image: url("https://api.individualogist.com/img/archetype/Explorer.jpg");
@@ -98,6 +101,15 @@ body {
 }
 .ui.inverted.segment.linear-background {
   background:  linear-gradient(to bottom, #ec6563 60%, #ffffff 0%);
+}
+.download {
+    font-size:1.2em !important;
+}
+.download:hover {
+    background: #ec6463;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15) !important;
+    transition: .4s;
+    -webkit-transition: .4s;
 }
 .text-orange {
   color: #ec6563;
