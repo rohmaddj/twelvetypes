@@ -122,7 +122,9 @@ class MemberArea extends Component {
                   <Card.Content extra>
                     {this.state.purchased ? (
                       <a href={this.state.downloadLink} target="_blank" rel="noopener">
-                        <Button disabled={loading}>Download</Button>
+                        <Button disabled={loading} className="download">
+                          Download
+                        </Button>
                       </a>
                     ) : (
                       <a
@@ -133,7 +135,7 @@ class MemberArea extends Component {
                           this.props.username
                         }
                       >
-                        <Button disabled={loading} primary>
+                        <Button disabled={loading} className="download">
                           Learn More
                         </Button>
                       </a>
