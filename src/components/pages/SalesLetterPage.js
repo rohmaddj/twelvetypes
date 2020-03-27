@@ -10,11 +10,13 @@ import meadow from "../../assets/images/free-reading/meadow.svg";
 import valley from "../../assets/images/free-reading/valley.svg";
 import road from "../../assets/images/free-reading/road.svg";
 import love from "../../assets/images/free-reading/love.png";
-import cover from "../../assets/images/covers/Cover_Caregiver.png";
-// import top from "../../assets/images/free-reading/top.png";
 
 class SalesLetterPage extends React.Component {
-  state = { placeholder: true, content: "" };
+  state = {
+    placeholder: true,
+    content: "",
+    archetype: this.props.personalised[0] !== undefined ? this.props.personalised[0].archetype : "caregiver"
+  };
   componentDidMount = async () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     if (this.props.personalised.length > 0) {
@@ -24,7 +26,7 @@ class SalesLetterPage extends React.Component {
             Authorization: "Bearer " + this.props.token
           },
           params: {
-            archetype: this.props.personalised[0] !== undefined ? this.props.personalised[0].archetype : "caregiver"
+            archetype: this.state.archetype
           }
         });
         this.setState({
@@ -342,7 +344,11 @@ class SalesLetterPage extends React.Component {
               {this.state.content.archetype}.
             </p>
             {/*Display Dynamic Cover For Archetype*/}
-            <img alt="premium archetype profile" src={cover} className="cover-img" />
+            <img
+              alt="premium archetype profile"
+              src={"https://api.individualogist.com/img/covers/" + this.state.archetype + ".png"}
+              className="cover-img"
+            />
             <p>
               And of course, just as we model the successes before us, you will have a figure to follow - giving you the
               most experiential and accelerated results possible.

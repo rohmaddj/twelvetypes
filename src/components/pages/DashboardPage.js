@@ -43,7 +43,8 @@ class DashboardPage extends React.Component {
           });
           // this.props.updateUser(response.data.user.name, response.data.user.archetype, response.data.user.created_at, this.props.token)
           this.props.storeResult(response.data.percentage);
-
+          // store archetype name
+          localStorage.setItem("archetype", Object.keys(response.data.percentage[0])[0]);
           // pie update data
           const newPieLabels = Object.keys(response.data.top_answers);
           const newPieSeries = [];
@@ -124,7 +125,8 @@ class DashboardPage extends React.Component {
           response.data.user.email
         );
         this.props.storeResult(response.data.percentage);
-
+        // store archetype name
+        localStorage.setItem("archetype", Object.keys(response.data.percentage[0])[0]);
         // pie update data
         const newPieLabels = Object.keys(response.data.top_answers);
         const newPieSeries = [];
