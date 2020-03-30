@@ -125,10 +125,10 @@ code {
   font-weight: 700;
   width: 32px;
   height: 32px;
-  z-index: 3;
+  z-index: 9999;
   position: absolute;
-  right: 30px;
-  top: 60%;
+  right: 18px;
+  top: 61%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;

@@ -55,12 +55,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_a.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_a.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_a.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_a.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_a"><p className="qn-opt">{question.answer_a.content}</p></label>
+                  <label htmlFor="option_a">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_a.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_a.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_a.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -72,12 +74,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_b.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_b.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_b.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_b.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_b"><p className="qn-opt">{question.answer_b.content}</p></label>
+                  <label htmlFor="option_b">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_b.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_b.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_b.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -89,12 +93,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_c.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_c.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_c.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_c.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_c"><p className="qn-opt">{question.answer_c.content}</p></label>
+                  <label htmlFor="option_c">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_c.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_c.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_c.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -106,12 +112,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_d.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_d.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_d.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_d.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_d"><p className="qn-opt">{question.answer_d.content}</p></label>
+                  <label htmlFor="option_d">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_d.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_d.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_d.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -123,12 +131,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_e.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_e.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_e.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_e.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_e"><p className="qn-opt">{question.answer_e.content}</p></label>
+                  <label htmlFor="option_e">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_e.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_e.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_e.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -140,12 +150,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_f.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_f.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_f.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_f.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_f"><p className="qn-opt">{question.answer_f.content}</p></label>
+                  <label htmlFor="option_f">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_f.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_f.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_f.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -157,12 +169,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_g.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_g.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_g.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_g.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_g"><p className="qn-opt">{question.answer_g.content}</p></label>
+                  <label htmlFor="option_g">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_g.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_g.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_g.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -174,12 +188,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_h.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_h.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_h.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_h.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_h"><p className="qn-opt">{question.answer_h.content}</p></label>
+                  <label htmlFor="option_h">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_h.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_h.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_h.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -191,12 +207,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_i.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_i.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_i.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_i.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_i"><p className="qn-opt">{question.answer_i.content}</p></label>
+                  <label htmlFor="option_i">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_i.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_i.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_i.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -208,12 +226,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_j.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_j.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_j.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_j.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_j"><p className="qn-opt">{question.answer_j.content}</p></label>
+                  <label htmlFor="option_j">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_j.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_j.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_j.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -225,12 +245,14 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_k.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_k.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_k.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_k.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_k"><p className="qn-opt">{question.answer_k.content}</p></label>
+                  <label htmlFor="option_k">
+                    <div className="order-number">
+                      {this.props.temp.indexOf(question.answer_k.archetype) !== -1
+                        ? this.props.temp.indexOf(question.answer_k.archetype) + 1
+                        : ""}
+                    </div>
+                    <p className="qn-opt">{question.answer_k.content}</p>
+                  </label>
                 </div>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -242,198 +264,18 @@ class ListQuiz extends React.Component {
                     onChange={evt => this.props.onChangeAnswer(question.answer_l.archetype, question.id)}
                     checked={this.setChecked(question.id, question.answer_l.archetype)}
                   />
-                  <div className="order-number">
-                    {this.props.temp.indexOf(question.answer_l.archetype) !== -1
-                      ? this.props.temp.indexOf(question.answer_l.archetype) + 1
-                      : ""}
-                  </div>
-                  <label htmlFor="option_l"><p className="qn-opt">{question.answer_l.content}</p></label>
-                </div>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-
-          {/* <div className="statement">
-            <Divider title={question.question}></Divider>
-          </div>
-          <div className="decision">
-            <div className="options">
-              <div className={this.props.mobile ? "row" : "ui grid"}>
-                <div className="eight wide column">
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_a.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_a.archetype)}
-                    />
-                    {question.answer_a.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_a.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_a.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_b.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_b.archetype)}
-                    />
-                    {question.answer_b.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_b.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_b.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_c.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_c.archetype)}
-                    />
-                    {question.answer_c.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_c.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_c.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_d.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_d.archetype)}
-                    />
-                    {question.answer_d.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_d.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_d.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_e.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_e.archetype)}
-                    />
-                    {question.answer_e.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_e.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_e.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_f.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_f.archetype)}
-                    />
-                    {question.answer_f.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_f.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_f.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                </div>
-                <div className="eight wide column">
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_g.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_g.archetype)}
-                    />
-                    {question.answer_g.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_g.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_g.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_h.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_h.archetype)}
-                    />
-                    {question.answer_h.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_h.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_h.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_i.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_i.archetype)}
-                    />
-                    {question.answer_i.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_i.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_i.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_j.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_j.archetype)}
-                    />
-                    {question.answer_j.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_j.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_j.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_k.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_k.archetype)}
-                    />
-                    {question.answer_k.content}
-                    <div className="ordered">
-                      {this.props.temp.indexOf(question.answer_k.archetype) !== -1
-                        ? this.props.temp.indexOf(question.answer_k.archetype) + 1
-                        : ""}
-                    </div>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="containerq">
-                    <input
-                      type="checkbox"
-                      onChange={evt => this.props.onChangeAnswer(question.answer_l.archetype, question.id)}
-                      checked={this.setChecked(question.id, question.answer_l.archetype)}
-                    />
-                    {question.answer_l.content}
-                    <div className="ordered">
+                  <label htmlFor="option_l">
+                    <div className="order-number">
                       {this.props.temp.indexOf(question.answer_l.archetype) !== -1
                         ? this.props.temp.indexOf(question.answer_l.archetype) + 1
                         : ""}
                     </div>
-                    <span className="checkmark"></span>
+                    <p className="qn-opt">{question.answer_l.content}</p>
                   </label>
                 </div>
-              </div>
-            </div>
-          </div> */}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
           <div className="row">
             <div className="five wide column">
               {question.id === 10 ? (
