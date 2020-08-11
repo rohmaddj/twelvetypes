@@ -15,7 +15,7 @@ class SalesLetterPage extends React.Component {
   state = {
     placeholder: true,
     content: "",
-    archetype: this.props.personalised[0] !== undefined ? this.props.personalised[0].archetype : "caregiver"
+    archetype: this.props.personalised[0] !== undefined ? this.props.personalised[0].archetype : "caregiver",
   };
   componentDidMount = async () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -23,15 +23,15 @@ class SalesLetterPage extends React.Component {
       try {
         const response = await twelveTypes.get("/getSalesLetter", {
           headers: {
-            Authorization: "Bearer " + this.props.token
+            Authorization: "Bearer " + this.props.token,
           },
           params: {
-            archetype: this.state.archetype
-          }
+            archetype: this.state.archetype,
+          },
         });
         this.setState({
           placeholder: false,
-          content: response.data.data
+          content: response.data.data,
         });
       } catch (error) {
         this.props.history.push("/dashboard");
@@ -487,6 +487,7 @@ class SalesLetterPage extends React.Component {
                 href="http://twelvetypes-test.individua1.pay.clickbank.net/"
                 className="ui huge submit button custom-background-orange"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Upgrade To Premium
               </a>
@@ -497,11 +498,11 @@ class SalesLetterPage extends React.Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     username: state.auth.username,
     result: state.quiz.result,
-    personalised: state.quiz.personalised
+    personalised: state.quiz.personalised,
   };
 };
 export default connect(mapStateToProps, null)(SalesLetterPage);

@@ -195,7 +195,7 @@ body {
   background: #283155;
   color: #ffffff;
 }
-.everyman-card {
+.member-card {
   background: #796e7e;
   color: #ffffff;
 }
@@ -642,7 +642,7 @@ body {
 .test-questions.comp .question .decision{
   display:-webkit-box;
   display:-ms-flexbox;
-  display:flex;
+  /* display:flex; */
   -webkit-box-align:center;
   -ms-flex-align:center;
   align-items:center;
@@ -1334,7 +1334,7 @@ h2.lover .content {
 h2.magician .content {
   color: #1b254c
 }
-h2.everyman .content {
+h2.member .content {
   color: #726675
 }
 h2.rebel .content {

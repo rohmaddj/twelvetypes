@@ -8,21 +8,21 @@ import { addQuiz, addAnswers, addTemp, resetTemp, changeTemp } from "../../actio
 class QuizPage extends React.Component {
   state = { percent: 0, open: false, mobile: false, placeholder: true };
 
-  show = size => this.setState({ size, open: true }); // open modal configuration
+  show = (size) => this.setState({ size, open: true }); // open modal configuration
   close = () => this.setState({ open: false }); // close modal configuration
 
   componentDidMount = async () => {
     window.scrollTo(0, 0);
     const response = await twelveType.get("/quizQuestion", {
-      params: { id: 1 }
+      params: { id: 1 },
     });
     this.setState({
-      placeholder: false
+      placeholder: false,
     });
 
     if (window.innerWidth <= 800 && window.innerHeight <= 800) {
       this.setState({
-        mobile: true
+        mobile: true,
       });
     }
     this.props.addQuiz(response.data.question);
@@ -41,7 +41,7 @@ class QuizPage extends React.Component {
     }
   };
 
-  componentDidUpdate = prevProps => {
+  componentDidUpdate = (prevProps) => {
     if (prevProps.temp.length !== this.props.temp.length) {
       if (this.props.temp.length === 3) {
         window.scrollTo({ top: 200, behavior: "smooth" });
@@ -49,24 +49,24 @@ class QuizPage extends React.Component {
     }
   };
 
-  onNextButton = async id => {
+  onNextButton = async (id) => {
     this.setState(
       {
-        placeholder: true
+        placeholder: true,
       },
       () => window.scrollTo({ top: 0, behavior: "smooth" })
     );
 
     const response = await twelveType.get("/quizQuestion", {
-      params: { id: id }
+      params: { id: id },
     });
     this.props.addQuiz(response.data.question);
     this.props.addAnswers(this.props.temp);
     this.props.resetTemp();
 
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       percent: prevState.percent >= 100 ? 0 : prevState.percent + 10,
-      placeholder: false
+      placeholder: false,
     }));
 
     if (id > 10) {
@@ -92,9 +92,7 @@ class QuizPage extends React.Component {
             <p>You can click/tap on an existing selection to de-select it</p>
           </Modal.Content>
           <Modal.Actions>
-            <Button onClick={this.close.bind()}>
-              Okay
-            </Button>
+            <Button onClick={this.close.bind()}>Okay</Button>
           </Modal.Actions>
         </Modal>
       </div>
@@ -102,13 +100,13 @@ class QuizPage extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isSignedIn: state.auth.isSignedIn,
     username: state.auth.username,
     archetype: state.auth.archetype,
     token: state.auth.token,
-    temp: state.quiz.temp
+    temp: state.quiz.temp,
   };
 };
 

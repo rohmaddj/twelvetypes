@@ -1,34 +1,30 @@
-import React from "react"
-import { connect } from "react-redux"
+import React from "react";
+import { connect } from "react-redux";
 
 class OptionList extends React.Component {
   render() {
-    const options = this.props.options.map(option => {
+    const options = this.props.option.map((option, i) => {
       return (
         <label className="containerq" key={option.id}>
           <input
             type="radio"
-            checked={
-              this.props.answers[this.props.questionId] ===
-              parseInt(option.value)
-            }
-            onChange={evt =>
-              this.props.onChangeAnswer(option.value, this.props.questionId)
-            }
+            checked={this.props.answers[this.props.questionId] === i}
+            onChange={(evt) => this.props.onChangeAnswer(i, this.props.questionId)}
           />
           <span className="checkmark"></span>
+          {option}
         </label>
-      )
-    })
+      );
+    });
 
-    return <div className="options">{options}</div>
+    return <div className="options">{options}</div>;
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    options: state.quiz.options
-  }
-}
+    option: state.quiz.option,
+  };
+};
 
-export default connect(mapStateToProps)(OptionList)
+export default connect(mapStateToProps)(OptionList);

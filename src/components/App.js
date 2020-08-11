@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import LoginPage from "./pages/LoginPage";
 import QuizPage from "./pages/QuizPage";
+import QuizV2Page from "./pages/QuizV2Page";
 import ContactPage from "./pages/ContactPage";
 import ArchetypePage from "./pages/ArchetypePage";
 
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route exact path="/contact" component={ContactPage} />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/quiz" component={QuizPage} />
+          <Route exact path="/quizV2" component={QuizV2Page} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/menu" component={SidebarMenu} />
           <Route exact path="/demo-result" component={DemoResultPage} />

@@ -17,15 +17,15 @@ class DashboardPage extends React.Component {
         labels: ["A"],
         dataLabels: {
           offset: 0,
-          minAngleToShowLabel: 10
-        }
+          minAngleToShowLabel: 10,
+        },
       },
       seriesPie: [100],
-      chart: false
+      chart: false,
     };
   }
 
-  componentDidUpdate = async prevProps => {
+  componentDidUpdate = async (prevProps) => {
     window.scrollTo(0, 0);
     if (localStorage.getItem("authToken") === null) {
       this.props.history.push("/login");
@@ -35,11 +35,11 @@ class DashboardPage extends React.Component {
         try {
           const response = await twelveType.get("/user/quizResult", {
             headers: {
-              Authorization: "Bearer " + this.props.token
+              Authorization: "Bearer " + this.props.token,
             },
             params: {
-              answers: this.props.archetype
-            }
+              answers: this.props.archetype,
+            },
           });
           // this.props.updateUser(response.data.user.name, response.data.user.archetype, response.data.user.created_at, this.props.token)
           this.props.storeResult(response.data.percentage);
@@ -49,7 +49,7 @@ class DashboardPage extends React.Component {
           const newPieLabels = Object.keys(response.data.top_answers);
           const newPieSeries = [];
           const newPieColors = [];
-          newPieLabels.map(data => {
+          newPieLabels.map((data) => {
             if (response.data.top_answers[data] !== 0) {
               newPieSeries.push(response.data.top_answers[data]);
               if (data === "caregiver") {
@@ -86,10 +86,10 @@ class DashboardPage extends React.Component {
             optionsPie: {
               labels: newPieLabels,
               legend: { show: false },
-              colors: newPieColors
+              colors: newPieColors,
             },
             chart: true,
-            placeholder: false
+            placeholder: false,
           });
         } catch {
           this.props.history.push("/login");
@@ -111,12 +111,13 @@ class DashboardPage extends React.Component {
       try {
         const response = await twelveType.get("/user/quizResult", {
           headers: {
-            Authorization: "Bearer " + this.props.token
+            Authorization: "Bearer " + this.props.token,
           },
           params: {
-            answers: this.props.answers
-          }
+            answers: this.props.answers,
+          },
         });
+        console.log(response);
         this.props.updateUser(
           response.data.user.name,
           response.data.user.archetype,
@@ -131,7 +132,7 @@ class DashboardPage extends React.Component {
         const newPieLabels = Object.keys(response.data.top_answers);
         const newPieSeries = [];
         const newPieColors = [];
-        newPieLabels.map(data => {
+        newPieLabels.map((data) => {
           if (response.data.top_answers[data] !== 0) {
             newPieSeries.push(response.data.top_answers[data]);
             if (data === "caregiver") {
@@ -168,8 +169,8 @@ class DashboardPage extends React.Component {
             ...carry,
             {
               name: key,
-              data: [response.data.top_answers[key]]
-            }
+              data: [response.data.top_answers[key]],
+            },
           ];
         }, []);
 
@@ -179,10 +180,10 @@ class DashboardPage extends React.Component {
           optionsPie: {
             labels: newPieLabels,
             legend: { show: false },
-            colors: newPieColors
+            colors: newPieColors,
           },
           chart: true,
-          placeholder: false
+          placeholder: false,
         });
       } catch {
         this.props.history.push("/login");
@@ -191,13 +192,13 @@ class DashboardPage extends React.Component {
       try {
         const response = await twelveType.get("/user/quizResult", {
           headers: {
-            Authorization: "Bearer " + this.props.token
+            Authorization: "Bearer " + this.props.token,
           },
           params: {
-            answers: this.props.archetype
-          }
+            answers: this.props.archetype,
+          },
         });
-        console.log(response);
+        //console.log(response);
         this.props.updateUser(
           response.data.user.name,
           response.data.user.archetype,
@@ -211,7 +212,7 @@ class DashboardPage extends React.Component {
         const newPieLabels = Object.keys(response.data.top_answers);
         const newPieSeries = [];
         const newPieColors = [];
-        newPieLabels.map(data => {
+        newPieLabels.map((data) => {
           if (response.data.top_answers[data] !== 0) {
             newPieSeries.push(response.data.top_answers[data]);
             if (data === "caregiver") {
@@ -248,10 +249,10 @@ class DashboardPage extends React.Component {
           optionsPie: {
             labels: newPieLabels,
             legend: { show: false },
-            colors: newPieColors
+            colors: newPieColors,
           },
           chart: true,
-          placeholder: false
+          placeholder: false,
         });
       } catch {
         this.props.history.push("/login");
@@ -285,7 +286,7 @@ class DashboardPage extends React.Component {
                 <Chart options={this.state.optionsPie} series={this.state.seriesPie} type="donut" />
               </div>
               <div className="nine wide column archetype-table">
-                {this.props.result.map(data => {
+                {this.props.result.map((data) => {
                   var archetype = Object.keys(data)[0];
                   return (
                     <Container key={archetype}>
@@ -324,7 +325,7 @@ class DashboardPage extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isSignedIn: state.auth.isSignedIn,
     archetype: state.auth.archetype,
@@ -332,7 +333,7 @@ const mapStateToProps = state => {
     register: state.auth.register,
     token: state.auth.token,
     answers: state.quiz.answers,
-    result: state.quiz.result
+    result: state.quiz.result,
   };
 };
 
@@ -341,5 +342,5 @@ export default connect(mapStateToProps, {
   storeResult,
   signOut,
   resetAnswers,
-  signIn
+  signIn,
 })(DashboardPage);

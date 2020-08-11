@@ -14,28 +14,29 @@ class PersonalisedPage extends React.Component {
     window.scrollTo({ top: 0, behavior: "smooth" });
     if (this.props.result.length > 0) {
       let tmp = [];
-      this.props.result.map(data => {
+      this.props.result.map((data) => {
         tmp = [...tmp, Object.keys(data)[0]];
+        return true;
       });
       this.setState(
         {
-          listArchetype: tmp
+          listArchetype: tmp,
         },
         async () => {
           try {
             const response = await twelveTypes.get("/getPersonalised", {
               headers: {
-                Authorization: "Bearer " + this.props.token
+                Authorization: "Bearer " + this.props.token,
               },
               params: {
-                archetype: this.state.listArchetype
-              }
+                archetype: this.state.listArchetype,
+              },
             });
             this.props.addPersonalised(response.data.data);
             this.setState({
               placeholder: false,
               primaryTraits:
-                response.data.data[0].p1 + ", " + response.data.data[1].p1 + ", and " + response.data.data[2].p1
+                response.data.data[0].p1 + ", " + response.data.data[1].p1 + ", and " + response.data.data[2].p1,
             });
           } catch (error) {
             this.props.history.push("/dashboard");
@@ -48,7 +49,7 @@ class PersonalisedPage extends React.Component {
   };
 
   render() {
-    const StrengthsAndWeaknesses = this.props.personalised.map(archetype => {
+    const StrengthsAndWeaknesses = this.props.personalised.map((archetype) => {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
@@ -65,7 +66,7 @@ class PersonalisedPage extends React.Component {
       );
     });
 
-    const Goals = this.props.personalised.map(archetype => {
+    const Goals = this.props.personalised.map((archetype) => {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
@@ -80,7 +81,7 @@ class PersonalisedPage extends React.Component {
       );
     });
 
-    const Fears = this.props.personalised.map(archetype => {
+    const Fears = this.props.personalised.map((archetype) => {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
@@ -95,7 +96,7 @@ class PersonalisedPage extends React.Component {
       );
     });
 
-    const ChallengesAndDragons = this.props.personalised.map(archetype => {
+    const ChallengesAndDragons = this.props.personalised.map((archetype) => {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
@@ -110,7 +111,7 @@ class PersonalisedPage extends React.Component {
       );
     });
 
-    const Resolution = this.props.personalised.map(archetype => {
+    const Resolution = this.props.personalised.map((archetype) => {
       return (
         <Container key={archetype.archetype}>
           <Header as="h2" className={archetype.archetype}>
@@ -245,11 +246,11 @@ class PersonalisedPage extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     username: state.auth.username,
     result: state.quiz.result,
-    personalised: state.quiz.personalised
+    personalised: state.quiz.personalised,
   };
 };
 

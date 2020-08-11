@@ -11,7 +11,7 @@ class MemberArea extends Component {
     loading: true,
     purchased: false,
     downloadLink: "",
-    archetype: localStorage.getItem("archetype") !== undefined ? localStorage.getItem("archetype") : "caregiver"
+    archetype: localStorage.getItem("archetype") !== undefined ? localStorage.getItem("archetype") : "caregiver",
   };
   componentDidUpdate = async () => {
     window.scrollTo(0, 0);
@@ -23,18 +23,18 @@ class MemberArea extends Component {
         try {
           const response = await twelveType.get("/user/checkProduct", {
             headers: {
-              Authorization: "Bearer " + this.props.token
-            }
+              Authorization: "Bearer " + this.props.token,
+            },
           });
           this.setState({
             loading: false,
             downloadLink: response.data.response,
-            purchased: response.data.response != null ? true : false
+            purchased: response.data.response != null ? true : false,
           });
           console.log(response);
         } catch (err) {
           this.setState({
-            loading: false
+            loading: false,
           });
           console.log(err);
         }
@@ -51,18 +51,18 @@ class MemberArea extends Component {
       try {
         const response = await twelveType.get("/user/checkProduct", {
           headers: {
-            Authorization: "Bearer " + this.props.token
-          }
+            Authorization: "Bearer " + this.props.token,
+          },
         });
         this.setState({
           loading: false,
           downloadLink: response.data.response,
-          purchased: response.data.response != null ? true : false
+          purchased: response.data.response != null ? true : false,
         });
         console.log(response);
       } catch (err) {
         this.setState({
-          loading: false
+          loading: false,
         });
         console.log(err);
       }
@@ -121,7 +121,7 @@ class MemberArea extends Component {
 
                   <Card.Content extra>
                     {this.state.purchased ? (
-                      <a href={this.state.downloadLink} target="_blank" rel="noopener">
+                      <a href={this.state.downloadLink} target="_blank" rel="noopener noreferrer">
                         <Button disabled={loading} className="download">
                           Download
                         </Button>
@@ -151,7 +151,7 @@ class MemberArea extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isSignedIn: state.auth.isSignedIn,
     archetype: state.auth.archetype,
@@ -160,7 +160,7 @@ const mapStateToProps = state => {
     token: state.auth.token,
     answers: state.quiz.answers,
     result: state.quiz.result,
-    email: state.auth.email
+    email: state.auth.email,
   };
 };
 
