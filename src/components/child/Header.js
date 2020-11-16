@@ -13,8 +13,8 @@ class Header extends React.Component {
       try {
         const response = await twelveType.get("/auth", {
           headers: {
-            Authorization: "Bearer " + localStorage.getItem("authToken")
-          }
+            Authorization: "Bearer " + localStorage.getItem("authToken"),
+          },
         });
         var archetype = "";
         if (response.data.user.archetype !== "") {
@@ -77,7 +77,7 @@ class Header extends React.Component {
                   Hi, {this.props.username}
                 </Link>
               ) : (
-                <Link className="b-special ui huge button" to="/quiz">
+                <Link className="b-special ui huge button" to="/quizV2">
                   PERSONALITY TEST
                 </Link>
               )}
@@ -89,10 +89,10 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isSignedIn: state.auth.isSignedIn,
-    username: state.auth.username
+    username: state.auth.username,
   };
 };
 export default connect(mapStateToProps, { signIn })(Header);

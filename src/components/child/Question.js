@@ -30,7 +30,7 @@ class Question extends React.Component {
         {this.renderOption()}
         <div className="row">
           <div className="five wide column">
-            {this.props.question.id === 32 ? (
+            {this.props.question.id === 40 ? (
               <button
                 className="ui huge button submit-button"
                 onClick={(evt) => this.props.onNextButton(this.props.question.id + 1)}

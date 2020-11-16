@@ -68,7 +68,7 @@ class QuizV2Page extends React.Component {
     this.props.resetTmpControl();
     const temp = [...this.props.temp, this.props.tmpControl]; // update temp special
 
-    if (temp.length === 32) {
+    if (temp.length === 40) {
       this.props.addAnswers(temp);
       this.props.history.push("/register");
     } else {
@@ -91,7 +91,7 @@ class QuizV2Page extends React.Component {
     // tmp[questionNumber] = this.props.tmpControl;
 
     this.setState((prevState) => ({
-      percent: prevState.percent >= 100 ? 0 : prevState.percent + 3,
+      percent: prevState.percent >= 100 ? 0 : prevState.percent + 2.5,
       placeholder: false,
     }));
   };
